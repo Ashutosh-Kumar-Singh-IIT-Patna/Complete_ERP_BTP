@@ -1,0 +1,582 @@
+Course Code,Course Name,LTP,Credit,Type
+MA1101,Calculus and Linear Algebra,3-1-0,4,Core
+CS1101,Foundations of Programming,3-0-3,4.5,Core
+PH1101,Physics,3-1-3,5.5,Core
+PH1201,Physics,3-1-3,5.5,Core
+CE1101,Engineering Graphics,1-0-3,2.5,Core
+CE1201,Engineering Graphics,1-0-3,2.5,Core
+EE1101,Electrical Sciences,3-0-3,4.5,Core
+EE1201,Electrical Sciences,3-0-3,4.5,Core
+HS1101,English for Professionals,2-0-1,2.5,Core
+MA1201,Probability Theory and Ordinary Differential Equations,3-1-0,4,Core
+CS1201,Data Structure,3-0-3,4.5,Core
+CH1201,Chemistry,3-1-3,5.5,Core
+CH1101,Chemistry,3-1-3,5.5,Core
+ME1201,Mechanical Fabrication,0-0-3,1.5,Core
+ME1101,Mechanical Fabrication,0-0-3,1.5,Core
+ME1202,Engineering Mechanics,3-1-0,4,Core
+ME1102,Engineering Mechanics,3-1-0,4,Core
+IK1101,Indian Knowledge System (IKS),3-0-0,3,IKS
+CB2101,Introduction to Chemical Engineering,2-0-0,2,Core
+CB2102,Fluid Mechanics,3-1-2,5,Core
+CB2103,Heat Transfer,3-0-3,4.5,Core
+CB2104,Chemical Process Calculations,3-1-0,4,Core
+CB2105,Chemical Engineering Thermodynamics,3-0-0,3,Core
+HS21PQ,HSS Elective-I,3-0-0,3,HS1
+CB2201,Mechanical Operations,2-0-3,3.5,Core
+CB2202,Mass Transfer-I,3-0-0,3,Core
+CB2203,Fundamentals of Biochemical Engineering,3-0-0,3,Core
+CB2204,Process Dynamics and Control,3-0-2,4,Core
+CB2205,Chemical Reaction Engineering-I,3-0-0,3,Core
+CB22PQ,IDE1,3-0-0,3,IDE1
+CB3101,Mass Transfer-II,3-0-3,4.5,Core
+CB3102,Chemical Process Technology,3-0-0,3,Core
+CB3103,Process Equipment Design,1-2-0,3,Core
+CB3104,Chemical Reaction Engineering-II,3-0-2,4,Core
+CB3105,Chemical Process Modeling and Simulation,2-0-3,3.5,Core
+CB31PQ,IDE1I,3-0-0,3,IDE2
+CB3201,Process Plant Design and Economics,3-0-0,3,Core
+CB3202,Transport Phenomena,3-1-0,4,Core
+CB3203,Numerical Methods in Chemical Engineering,3-1-0,4,Core
+CB3204,AI/ML for Chemical Engineers,1-0-4,3,Core
+CB3205,Chemical Plant Safety and Hazards,3-0-0,3,Core
+CB32PQ,DE1,3-0-0,3,DE1
+CB41PQ,DE1I,3-0-0,3,DE2
+XX41PQ,IDE1II,3-0-2,3,IDE3
+HS31PQ,HSS Elective-II,3-0-3,3,HS2
+CB4198,Summer Internship*,0-0-12,3,SI
+CB4199,Project – I,0-0-12,6,P1
+CB42PQ,DE1V,3-0-0,3,DE4
+CB4298,DE5I,3-0-0,3,DE6
+CB4299,Project – II,0-0-16,8,P2
+CE2101,Geomatics Engineering,3-1-2,5,Core
+CE2102,Structural Mechanics,3-1-0,4,Core
+CE2103,Fluid Mechanics ,3-1-2,5,Core
+CE2104,Geology for Engineers ,3-0-2,4,Core
+CE2201,Structural Analysis ,3-0-2,4,Core
+CE2202,Soil Mechanics,3-0-2,4,Core
+CE2203,Civil Engineering Materials,3-0-2,4,Core
+CE2204,Water Resource Engineering - 1,3-0-0,3,Core
+CE2205,Numerical Methods in Civil Engineering,3-0-0,3,Core
+CE22PQ,IDE1,3-0-0,3,IDE1
+CE3101,Design of Reinforced Concrete Structures,3-0-2,4,Core
+CE3102,Foundation Engineering  ,3-0-2,4,Core
+CE3103,Transportation Engineering - 1,3-1-2,5,Core
+CE3104,Environmental Engineering - 1,3-0-2,4,Core
+CE3190,IDE2,3-0-0,3,IDE2
+CE3201,Design of Steel Structures,3-1-0,4,Core
+CE3202,Infrastructure Drawing and Estimation ,1-2-0,3,Core
+CE3203,Construction Planning & Management,3-0-0,3,Core
+CE3204,Environmental Engineering - 2,3-1-0,4,Core
+CE3205,Water Resource Engineering - 2,3-0-2,4,Core
+CE3206,Transportation Engineering - 2,3-0-0,3,Core
+CE41PQ,DE1,3-0-0,3,DE1
+HS41PQ,HS2,3-0-0,3,HS2
+CE4198,Summer Internship,0-0-12,3,SI
+CE4199,Project - 1,0-0-12,6,P1
+CE42PQ,DE3,3-0-0,3,DE3
+CE4299,Project - 2,0-0-16,8,P2
+CH2101,Organic Chemistry,3-1-0,4,Core
+CH2102,Inorganic Chemistry,3-1-0,4,Core
+CH2103,Introduction to Quantum Chemistry,3-1-0,4,Core
+CH2104,Fluid Mechanics,3-1-2,5,Core
+CH2105,Chemical Process Calculations,3-0-0,3,Core
+CH2201,Structure and function of Biomolecules,3-0-0,3,Core
+CH2202,Introduction to Organometallics,3-1-0,4,Core
+CH2203,Chemical Thermodynamics and Equilibrium,3-1-0,4,Core
+CH2204,Industrial Chemistry,3-0-0,3,Core
+CH2205,Chemical Technology Laboratory I,0-0-6,3,Core
+CH2206,IDE1: Green Science and Technology,3-0-0,3,IDE1
+CH3101,Macromolecular Science and Engineering,3-1-0,4,Core
+CH3102,Design and Applications of Nanomaterials,2-1-0,3,Core
+CH3103,Chemical Kinetics and Electrochemistry,3-0-0,3,Core
+CH3104,Techniques for Chemical Analysis,3-1-0,4,Core
+CH3105,Chemical Technology Laboratory II,0-0-6,3,Core
+CH3106,IDE1I: Synthesis of Industrially Important Inorganic Molecules,3-0-0,3,IDE2
+CH3201,Medicinal Chemistry,3-0-0,3,Core
+CH3202,Environmental Science & Technology,3-0-0,3,Core
+CH3203,Computational Chemistry,3-0-2,4,Core
+CH3204,Chemistry for Propellants and Pyrotechnics,3-0-0,3,Core
+CH3205,Chemical Technology Laboratory III,0-0-6,3,Core
+CH32PQ,Department Elective-I,3-0-0,3,DE1
+CH41PQ,Departmental Elective – II,3-0-0,3,DE2
+CH4111,IDE1II: Analytical Chemistry,3-0-0,3,IDE3
+CH4198,Summer Internship*,0-0-12,3,SI
+CH4199,Project – I,0-0-6,6,P1
+CH42XX,Departmental Elective – IV,3-0-0,3,DE4
+CH4299,Project – II,0-0-16,8,P2
+CS2101,Algorithm,3-0-3,4.5,Core
+CS2102,Digital Logic and Computer Organization,3-0-3,4.5,Core
+CS2103,Artificial Intelligence Concepts,2-0-2,3,Core
+CS2104,Discrete Mathematics,3-0-0,3,Core
+CS2105,Optimization Techniques,3-0-0,3,Core
+CS2201,Formal Language and Automata Theory,3-0-0,3,Core
+CS2202,Database and Warehousing,3-0-2,4,Core
+CS2203,Artificial Intelligence,3-0-3,4.5,Core
+CS2204,IT Workshop,0-2-2,3,Core
+CS2206,Data Analytics and Visualization,3-0-3,4.5,Core
+CS2209,IDE1 (Introduction to Data Science),3-0-0,3,IDE1
+CS3101,Operating System,3-0-3,4.5,Core
+CS3102,Computer Network,3-0-3,4.5,Core
+CS3103,Machine Learning,3-0-3,4.5,Core
+CS3105,Natural Language Processing,3-0-3,4.5,Core
+CS3109,IDE1I (Computer Graphics),3-0-0,3,IDE2
+CS3201,Cyber Security,3-0-2,4,Core
+CS3202,Deep Learning,3-0-3,4.5,Core
+CS3204,Computer Vision,3-0-3,4.5,Core
+CS3299,Capstone Project,0-0-6,3,Core
+CS32XX,DE1,3-0-0,3,DE1
+CS41XX,DE1I,3-0-0,3,DE2
+CS4109,IDE - III (Data Analysis and Visualization),3-0-0,3,IDE3
+CS4198,Summer Internship*/ Summer Project,0-0-12,3,SI/SP
+CS4199,Project – I,0-0-12,6,P1
+HS21XX,HSS Elective I,3-0-0,3,HS
+CS2205,Computer Architecture,3-0-3,4.5,Core
+CS3104,Compiler,3-0-3,4.5,Core
+CS3203,Internet of Things,3-0-3,4.5,Core
+CS42XX,DE1V,3-0-0,3,DE4
+CS4299,Project – II,0-0-16,8,P2
+EE2101,Measurements and Instrumentation,3-0-2,4,Core
+EE2102,Network Analysis and Synthesis,3-0-0,3,Core
+EC2101,Analog Circuits,3-0-2,4,Core
+EC2102,Signals and Systems,3-1-0,4,Core
+EC2103,Semiconductor Devices,3-0-2,4,Core
+EC2201,Digital Electronics,3-0-2,4,Core
+EC2202,Microprocessor,2-0-2,3,Core
+EE2201,Control Systems,3-0-2,4,Core
+EC2203,Computer Organization and Architecture,3-0-0,3,Core
+EC2204,Internet of Things,3-0-0,3,Core
+XX22PQ,IDE I,3-0-0,3,IDE1
+EC3101,Microcontroller and Embedded System,3-0-2,4,Core
+EE3102,VLSI Design,3-0-2,4,Core
+EC3103,Analog Communication,3-0-2,4,Core
+EC3104,Engineering Electromagnetics,3-0-0,3,Core
+EC3105,Random Signals and Stochastic Processes,3-0-0,3,Core
+XX31PQ,IDE II,3-0-0,3,IDE2
+EC3201,Digital Communication,3-0-2,4,Core
+EC3202,Digital Signal Processing,3-0-0,4,Core
+EC3203,Introduction to AI/ML,3-0-0,3,Core
+EC3204,Low Power MOSFETs Design and Modeling,3-0-0,3,Core
+EC3205,Introduction to Wireless Communications,3-0-0,3,Core
+EC3206,RF Systems,3-0-0,3,Core
+EC41XX,Department Elective I,3-0-0,3,DE1
+EC4198,Summer Internship*,0-0-12,3,SI
+EC4199,Project – I,0-0-12,6,P1
+EC42XX,Department Elective III,3-0-0,3,DE3
+EC4299,Project – II,0-0-16,8,P2
+EE2103,Electrical Machines – I,2-0-2,3,Core
+EE2202,Electrical Machines-II,2-0-2,3,Core
+EE3101,Power Systems-I,2-0-2,3,Core
+EE3201,Fundamentals of Electric Drives,3-0-2,4,Core
+EE3202,Power System II,3-0-2,4,Core
+EE3203,Power Electronics,3-0-2,4,Core
+EE3204,Electrical Machine Design,1-0-2,2,Core
+EE41xx,DE1,3-0-0,3,DE1
+EE4198,SI,0-0-12,3,SI
+EE4199,P1,0-0-12,6,P1
+EE42xx,DE3,3-0-0,3,DE3
+EE4299,P2,0-0-16,8,P2
+MA2101,Design and Analysis of Algorithms,3-0-2,4,Core
+MA2102,Probability and Stochastic Processes,3-1-0,4,Core
+MA2103,Optimization Techniques,3-0-0,3,Core
+MA2104,Algebra,3-0-0,3,Core
+MA2105,Discrete Mathematics,3-0-0,3,Core
+MA2201,Introduction to Machine Learning,2-0-2,3,Core
+MA2202,Real Analysis and Measure Theory,3-0-0,3,Core
+MA2203,Numerical Linear Algebra,3-0-2,4,Core
+MA2204,Computer Architecture and Organization,3-0-3,4.5,Core
+MA2205,Database Management Systems,3-0-3,4.5,Core
+MA3101,Ordinary and Partial Differential Equations,3-0-0,3,Core
+MA3102,Complex Analysis,3-0-0,3,Core
+MA3103,Theory of Computation,3-0-0,3,Core
+MA3104,Computer Networks,3-0-3,4.5,Core
+MA3105,Operating Systems,3-0-3,4.5,Core
+MA3201,Number Theory and Cryptography,3-0-0,3,Core
+MA3202,Numerical Methods,3-0-2,4,Core
+MA3203,Mathematical Statistics,3-0-0,3,Core
+MA3204,Convex Optimization,3-0-2,4,Core
+MA3205,Functional Analysis,3-0-0,3,Core
+MA3206,Artificial Intelligence,3-0-2,4,Core
+HSXXX,HSS Elective - II,3-0-0,3,HS2
+MA41PQ,Departmental Elective I,3-0-0,3,DE1
+MA4198,Summer Internship,0-0-12,3,SI
+MA4199,Project I,0-0-12,6,P1
+MA42PQ,Departmental Elective  III,3-0-0,3,DE3
+MA4299,Project II,0-0-16,8,P2
+ME2101,Dynamics,3-1-0,4,Core
+ME2102,Thermodynamics,3-1-0,4,Core
+ME2103,Fluid Mechanics,3-1-2,5,3-1-0
+ME2104,Engineering Materials,3-0-2,4,3-1-0
+ME2201,Kinematics and Dynamics of Mechanisms,3-1-2,5,Core
+ME2202,Heat and Mass Transfer,3-1-2,5,Core
+ME2203,Mechanics of Solids,3-1-0,4,Core
+ME2204,Mechanical Measurements and Instrumentation,3-0-2,4,Core
+ME3101,Data Analytics and Machine Learning Tools for Engineers,1-2-1,3.5,Core
+ME3102,Design of Machine Elements,3-0-3,4.5,Core
+ME3103,Manufacturing Technology- I,3-0-2,4,Core
+ME3104,Engineering Software Laboratory,1-0-3,2.5,Core
+ME3105,Numerical Methods for Engineers,3-0-0,3,Core
+ME3201,Applied Thermodynamics and Turbomachinery,3-1-2,5,Core
+ME3202,System Dynamics and Control,3-1-2,5,Core
+ME3203,Manufacturing Technology -II,3-0-3,4.5,Core
+ME3204,Industrial Engineering and Operations Research,3-1-0,4,Core
+ME3205,Technical Writing and Presentations,0-0-4,2,Core
+ME41XX,DE1,3-0-0,3,DE1
+ME4198,SI,0-0-12,3,SI
+ME4199,P1,0-0-12,6,P1
+ME42XX,DE3,3-0-0,3,DE3
+ME4299,P2,0-0-16,8,P2
+MM2101,Introduction to Metallurgical and Materials Engineering,3-0-0,3,Core
+MM2102,Mineral Processing and Process Metallurgy,3-0-3,4.5,Core
+MM2103,Thermodynamics and Phase Equilibria,3-0-3,4.5,Core
+MM2104,Transport Phenomena,3-1-0,4,Core
+MM2105,Fundamentals of Polymer Science and Technology,3-0-0,3,Core
+MM2201,Iron and Steel Making,3-1-0,4,Core
+MM2202,Techniques of Materials Characterization I,3-0-3,4.5,Core
+MM2203,Phase Transformation and Diffusion,3-1-0,4,Core
+MM2204,Mechanical Behaviour of Materials,3-0-3,4.5,Core
+MM2205,Welding and Solidification,3-0-0,3,Core
+MM2290,IDE1,3-0-0,3,IDE1
+MM3101,Thermomechanical Processing of Metallic Materials,3-0-2,4,Core
+MM3102,Computational Materials Science,2-1-0,3,Core
+MM3103,Engineering Polymers,3-0-2,4,Core
+MM3104,Ceramic Science and Technology,3-0-2,4,Core
+MM3105,Metallography and Heat Treatment Laboratory,0-0-2,1,Core
+MM3190,IDE2,3-0-0,3,IDE2
+MM3201,Techniques of Materials Characterization II,3-0-3,4.5,Core
+MM3202,Corrosion and Corrosion Prevention,3-0-2,4,Core
+MM3203,Functional Materials,3-0-0,3,Core
+MM3204,Non-ferrous Metals and Alloys,3-0-0,3,Core
+MM3205,Capstone Laboratory,0-0-4,2,Core
+MM3210,Metals Processing Laboratory,0-0-3,1.5,Core
+MM41PQ,DE1,3-0-0,3,DE1
+MM4198,SI,0-0-12,3,SI
+MM4199,P1,0-0-12,6,P1
+MM42PQ,DE3,3-0-0,3,DE3
+MM4299,P2,0-0-16,8,P2
+EP2101,Quantum Physics,3-1-0,4,Core
+EP2102,Optics and Lasers,3-0-3,4.5,Core
+EP2103,Classical dynamics: discrete and continuum systems,3-1-0,4,Core
+EP2104,Thermal physics with engineering applications,3-1-0,4,Core
+EP2201,Introduction to Nuclear and Particle Physics,2-1-0,3,Core
+EP2202,Mathematical Methods for Engineers,3-1-0,4,Core
+EP2203,Electromagnetism,3-1-0,4,Core
+EP2204,Introductory Statistical Mechanics,2-1-0,3,Core
+EP2205,Analog Electronics,2-0-3,3.5,Core
+EP22PQ,IDE – I,3-0-0,3,ID1
+EP3101,Computational Techniques,2-0-3,3.5,Core
+EP3102,Data Science for Physicists,1-1-3,3.5,Core
+EP3103,Digital Electronics and Microprocessors,2-0-3,3.5,Core
+EP3104,Solid State Physics,3-1-2,5,Core
+EP3105,Instrumentation Techniques,2-0-2,3,Core
+EP31XX,IDE – II,3-0-0,3,ID2
+EP3201,Nonlinear Dynamics,2-1-0,3,Core
+EP3202,Interfacing and data analysis,1-0-4,3,Core
+EP3203,Atomic and Molecular Physics,3-1-2,5,Core
+EP3204,Soft Condensed Matter Physics,3-0-0,3,Core
+PH32XX,DE – I,3-0-0,3,DE1
+EP4105,Quantum Technology Laboratory,1-0-3,2.5,Core
+PH41XX ,DE1II,3-0-0,3,DE3
+PH42XX,DE1II,3-0-0,3,DE3
+PHXXXX,IDE – III,3-0-0,3,ID3
+PH4198,Summer Internship*,0-0-12,3,SI
+PH4199,Project – I,0-0-12,6,P1
+PH4299,Project – II,0-0-16,8,P2
+HS5111,Technical Writing and Soft Skill,1-2-2,4,C
+CB5101,Advanced Reaction Engineering,3-1-0,4,C
+CB5102,Advanced Heat Transfer,3-1-0,4,C
+CB5103,Introduction to Computational Techniques,1-0-3,2.5,C
+CB61PQ,DE1,3-0-0,3,DE1
+XX61PQ,IDE,3-0-0,3,IDE
+CB5201,Advanced Mass Transfer,3-1-0,4,C
+CB5202,Classical and Statistical Thermodynamics,3-1-0,4,C
+CB5203,Analytical Characterization Lab,1-0-3,2.5,C
+CB62PQ,DE1II,3-0-0,3,DE1II
+RM6201,Research Methodology,3-1-0,4,RM
+IK6201,IKS,3-0-0,3,IKS
+CB6198,Summer Internship/Mini Project,0-0-12,3,SI
+CB6199,Project I,0-0-30,15,P1
+CB6299,Project II,0-0-42,21,P2
+CE5101,Chemistry for Environmental Engineers,3-0-2,4,C
+CE5102,Physico-Chemical Principles and Processes,3-0-0,3,C
+CE5103,Solid and Hazardous Waste Management,3-0-0,3,C
+CE51PQ,DE1 (Environmental Elective),3-0-0,3,DE1
+CE61PQ,DE1 (Environmental Elective),3-0-0,3,DE1
+CE5201,Biological Principles and Processes,3-0-0,3,C
+CE5202,Air Pollution and Control,3-0-2,4,C
+CE5203,Environmental Impact Assessment,3-0-0,3,C
+CE52PQ,DE1II (Environmental Elective),3-0-0,3,DE3
+CE62PQ,DE1II (Environmental Elective),3-0-0,3,DE3
+CE6198,Summer Internship/Mini Project*,0-0-12,3,SI
+CE6199,Project I,0-0-30,15,P1
+CE6299,Project II,0-0-42,21,P2
+CE5104,Geotechnical Exploration,3-0-2,4,C
+CE5105,Advanced Soil Mechanics,3-0-0,3,C
+CE5106,Rock Engineering,3-0-2,4,C
+CE61PQ,DE1: (Geotechnical Elective),3-0-0,3,DE1
+CE5204,Core-4: Advanced Foundation Engineering,3-0-0,3,C
+CE5205,Core-5: Computational Geomechanics,3-0-2,4,C
+CE5206,Core-6: Fundamentals of Soil Behaviour,3-0-0,3,C
+CE62PQ,DE-3: (Geotechnical Elective),3-0-0,3,DE3
+CE5107,Engineering Behaviour of Rock,3-0-0,3,C
+CE5207,Analysis and Design of Underground Structures,3-0-2,4,C
+CE5208,Landslides and Avalanches,3-0-0,3,C
+SI,Summer Internship/Mini Project,0-0-12,3,SI
+P1,Project 1,0-0-30,15,P1
+P2,Project 2,0-0-42,21,P2
+CE5111,Urban Transportation Planning,3-0-0,3,Core
+CE5112,Pavement Analysis and Design,3-0-0,3,Core
+CE5113,Traffic Engineering and Management,3-0-3,4.5,Core
+CE5212,Highway Materials,3-0-3,4.5,Core
+CE5213,Railway Engineering,3-0-0,3,Core
+CE5214,Computer Applications in Transportation Engineering,2-1-0,3,Core
+CE5108,Advanced Structural Analysis,3-0-2,4,Core
+CE5109,Structural Dynamics,3-0-2,4,Core
+CE5110,Theory of Plates and Shells,3-0-0,3,Core
+CE5209,Advanced Concrete Design,3-0-2,4,Core
+CE5210,Earthquake Resistant Design of Structures,3-0-2,4,Core
+CE5211,Stability of Structures,3-0-0,3,Core
+CE5181,Advanced Engineering Mathematics,3-0-0,3,Core
+CE5182,Civil Engineering Design – I,1-2-0,3,Core
+CE51XX,DE1,3-0-0,3,DE1
+CE61XX,DE1,3-0-0,3,DE1
+CE5183,Civil Engineering Lab-I,0-0-3,1.5,Core
+CE5281,Civil Engineering Design – II,1-2-0,3,Core
+CE5282,Finite Element Methods,3-0-0,3,Core
+CE52XX,DE4,3-0-0,3,DE4
+CE62xx,DE4,3-0-0,3,DE4
+CE62xx,DE5,3-0-0,3,DE5
+CE5283,Civil Engineering Lab-II,0-0-3,1.5,Core
+IK6201,IKS ,3-0-0,3,IKS
+CS5101,Design and Analysis of Algorithms,3-1-0,4,C
+CS5102,Foundations of Computer Systems,3-0-0,3,C
+CS61XX,DE1,3-0-0,3,DE1
+CS5103,Computing Lab-1,0-1-2,2,C
+CS6109,IDE (Drone Data Processing & Analysis),3-0-0,3,IDE
+CS5201,Advanced Artificial Intelligence,3-0-0,3,C
+CS5203,Natural Language Processing,3-0-0,3,C
+CS62XX,DE1II,3-0-0,3,DE3
+CS5205,Advanced Artificial Intelligence Lab,0-1-2,2,C
+CS6198,Summer Internship/Mini Project*,0-0-12,3,SI
+CS6199,Project I,0-0-30,15,P1
+CS6299,Project II,0-0-42,21,P2
+EC5101,Information Theory and Coding,3-1-0,4,core
+EC5102,Advanced Digital Signal Processing,3-0-2,4,core
+EC5103,Antenna and Microwave Devices,3-0-2,4,core
+EC51XX,DE1,3-0-0,3,DE1
+EC61XX,DE1,3-0-0,3,DE1
+EC5201,Wireless Communication,3-0-2,4,core
+EC5202,Advanced Communication Systems,3-0-2,4,core
+EC52XX,DE1II,3-0-0,3,DE3
+EC62XX,DE1II,3-0-0,3,DE3
+EC6102,Summer Internship/ Mini Project*,0-0-12,3,SI
+EC6101,Project I,0-0-30,15,P1
+EC6201,Project II,0-0-42,21,P2
+EE5101,Computer Aided Power System Analysis,3-0-2,4,Core
+EE5102,Advanced Power Electronics Converters,3-0-2,4,Core
+EE5103,FACTS and Its Applications,3-0-2,4,Core
+EE51PQ,DE1 ,3-0-0,3,DE1
+EE61PQ,DE1 ,3-0-0,3,DE1
+EE5201,Power System Dynamics, Control and Protection,3-0-2,4,Core
+EE5202,Nonlinear Dynamical Systems,3-0-2,4,Core
+EE52PQ,DE1II,3-0-0,3,DE3
+EE62PQ,DE1II,3-0-0,3,DE3
+EE62PQ,DE5,3-0-0,3,DE5
+EE6198,Summer internship/Mini Project*,0-0-12,3,SI
+EE6199,Project I,0-0-30,15,P1
+EE6299,Project II,0-0-42,21,P2
+EC5151,Digital VLSI System,3-0-2,4,CORE
+EC5152,Embedded System ,3-0-2,4,CORE
+EC5161 ,Semiconductor Device Modeling and Simulation ,3-0-2,4,CORE
+EC51PQ,DE1,3-0-0,3,DE1
+EC61PQ,DE1,3-0-0,3,DE1
+XX61PQ,IDE,3-0-0,3,IDE
+EC5251,Analog and Mixed Signal Integrated Circuits ,3-0-2,4,CORE
+EC5252,High Performance Embedded Computing system ,3-0-2,4,CORE
+EC52PQ,DE3,3-0-0,3,DE3
+EC62PQ,DE3,3-0-0,3,DE3
+EC6198,Summer Internship/ Mini Project* ,0-0-12,3,SI
+EC6199,Project I ,0-0-30,15,P1
+EC6299,Project II,0-0-42,21,P2
+MC5101,Design and Analysis of Algorithms,3-1-2,5,CORE
+MC5102,Probability and Statistics,3-0-2,4,CORE
+XX51PQ,DE1,3-0-0,3,DE1
+MC5201,Advanced Artificial Intelligence,3-1-2,5,CORE
+MC5202,Numerical Linear Algebra and Optimization Techniques,3-0-2,4,CORE
+XX52PQ,DE4,3-0-0,3,DE4
+XX62PQ,DE4,3-0-0,3,DE4
+MC6198,Summer Internship Evaluation / Mini Project,0-0-12,3,SI
+MC6199,Project I,0-0-30,15,P1
+MC6299,Project II,0-0-42,21,P2
+ME5101,Advanced Engineering Mathematics,3-1-0,4,Core
+ME5103,Finite Element Analysis,3-0-0,3,Core
+ME5108,Deformation-based Manufacturing,3-0-0,3,Core
+ME61PQ,DE1,3-0-0,3,DE1
+ME5109,Manufacturing Lab - I,0-0-3,1.5,Core
+ME5201,Advanced Engineering Software Lab,1-0-4,3,Core
+ME5203,Measurement and Instrumentation,3-0-0,3,Core
+ME5207,Solidification-based Manufacturing,3-1-0,4,Core
+ME62PQ,DE1II,3-0-0,3,DE3
+ME5208,Manufacturing Lab - II,0-0-3,1.5,Core
+ME6198,Summer Internship / Mini Project,0-0-12,3,SI
+ME6199,Project I,0-0-30,15,P1
+ME6299,Project II,0-0-42,21,P2
+ME5102,Theory of Elasticity,3-0-0,3,Core
+ME5104,Design Lab - I,0-0-3,1.5,Core
+ME5202,Advanced Dynamics & Vibration,3-1-0,4,Core
+ME5204,Design Lab - II,0-0-3,1.5,Core
+MH5101,Fundamental of Mechatronics,3-0-0,3,Core
+MH5102,Mechatronics Lab - 1,0-0-3,1.5,DE3
+MH5201,Sensors and Actuators,3-0-0,3,Core
+MH5202,Modeling and Simulation of Mechatronic Systems,3-0-0,3,Core
+MH5203,Mechatronics Lab - 2,0-0-3,1.5,Core
+MH6198,Summer Internship/ Mini Project,0-0-12,3,SI
+MH6199,Project 1,0-0-30,15,P1
+MH6299,Project 2,0-0-42,21,P2
+ME5105,Advanced Fluid Mechanics,3-0-0,3,Core
+ME5106,Gas Dynamics and Propulsion,3-0-0,3,Core
+ME61XX,DE1,3-0-0,3,DE1
+ME5107,Thermo-Fluid Lab-I,0-0-3,1.5,Core
+ME5205,Advanced Heat Transfer,3-1-0,4,Core
+MEX2XX,DE1II,3-0-0,3,DE3
+ME5206,Thermo-Fluid Lab-II,0-0-3,1.5,Core
+MM5101,Thermodynamics and Phase Transformation,3-1-0,4,Core
+MM5102,Concepts in Materials Science,3-0-0,3,Core
+MM5103,Mechanical Behavior of Materials,3-0-2,4,Core
+MM5104,Nano-structured Materials,3-0-0,3,Core
+MM61PQ,DE1,3-0-0,3,DE1
+MM5205,Advanced Polymer Technology,3-0-2,4,Core
+MM5206,Advanced Engineering Materials,3-0-2,4,Core
+MM62PQ,DE1I,3-0-0,3,DE2
+MM6198,Summer Internship/ Mini Project*,0-0-12,3,SI/P
+MM6199,Project I,0-0-30,15,P1
+MM6299,Project II,0-0-42,21,P2
+CH4101,Quantum Chemistry,3-1-0,4,Core
+CH4102,Organic Chemistry-I,3-1-0,4,Core
+CH4103,Inorganic Chemistry-I,3-1-0,4,Core
+CH4104,Principles of Molecular Spectroscopy,3-0-0,3,Core
+CH4105,Symmetry & Group Theory,3-0-0,3,Core
+CH4106,Organic Chemistry Lab,0-0-6,3,Core
+HS4111,Soft Skills for Employability,1-2-0,3,HS1
+CH4201,Thermodynamics,3-1-0,4,Core
+CH4202,Organic Chemistry-II,3-0-0,3,Core
+CH4203,Inorganic Chemistry-II,3-0-0,3,Core
+CH4204,Chemical Kinetics,3-0-0,3,Core
+CH4205,Modern Methods of Analysis,3-1-0,4,Core
+CH4206,Inorganic Chemistry Lab,0-0-6,3,Core
+CH5101,Physical Chemistry Lab,0-0-6,3,Core
+CH5102,Inorganic Chemistry-III,3-0-0,3,Core
+CH5103,Organic Chemistry-III,3-0-0,3,Core
+CH5199,Project-I,0-0-12,6,P1
+CH51xx,Department Elective 1,3-0-0,3,DE1
+CH61xx,Department Elective 1,3-0-0,3,DE1
+CH61xx,Interdisciplinary Elective 1,3-0-0,3,IDE1
+CH6201,Computer Programming for Chemists,2-0-2,3,Core
+CH5299,Project-II,0-0-16,8,P2
+CH52xx,Department Elective 2,3-0-0,3,DE2
+CH62xx,Department Elective 2,3-0-0,3,DE2
+IK52xx,Indian Knowledge System,2-0-0,2,IKS
+MA4101,Computer Programming,2-0-4,4,Core
+MA4102,Linear Algebra,3-1-0,4,Core
+MA4103,Real Analysis,3-1-0,4,Core
+MA4104,Algebra,3-1-0,4,Core
+MA4105,Ordinary Differential Equations,3-1-0,4,Core
+MA4201,Topology,3-0-0,3,Core
+MA4202,Numerical Analysis,3-0-2,4,Core
+MA4203,Complex Analysis,3-1-0,4,Core
+MA4204,Linear Optimization Techniques,3-0-2,4,Core
+MA4205,Probability and Statistics,3-0-0,3,Core
+MA5101,Measure Theory,3-0-0,3,Core
+MA5102,Functional Analysis,3-0-0,3,Core
+MA5103,Partial Differential Equations,3-0-0,3,Core
+MA51xx,DE1,3-0-0,3,DE1
+MA61xx,DE1,3-0-0,3,DE1
+MA61xx,IDE1,3-0-0,3,IDE1
+MA5199,Project I,0-0-12,6,P1
+MA52xx,DE1I,3-0-0,3,DE2
+MA62xx,DE1I,3-0-0,3,DE2
+MA5299,Project II,0-0-16,8,P2
+PH4101,Mathematical Physics-I,3-1-0,4,Core
+PH4102,Classical Mechanics,3-1-0,4,Core
+PH4103,Quantum Mechanics-I,3-1-0,4,Core
+PH4104,Numerical Techniques,2-0-2,3,Core
+PH4105,Electronics,3-0-4,5,Core
+PH4201,Electrodynamics-I,3-1-0,4,Core
+PH4202,Statistical Physics,3-1-0,4,Core
+PH4203,Modern Optics,3-0-4,5,Core
+PH4204,Introduction to Nuclear and Particle Physics,3-0-0,3,Core
+PH42xx,DE1,2-1-0,3,DE1
+PH5101,Atomic and Molecular Physics,3-1-0,4,Core
+PH5102,Condensed Matter Physics-I,3-0-0,3,Core
+PH5103,"Atomic, Molecular and Nuclear Physics Laboratory",0-0-4,2,Core
+PH5199,P1,0-0-12,6,P1
+PH51xx,DE2,X-X-X,3*,DE2
+PH52xx,DE2,X-X-X,3*,DE2
+PH61xx,IDE1,3-0-0,3*,IDE1
+PH62xx,IDE1,3-0-0,3*,IDE1
+PH5210,Condensed Matter Physics Lab,0-0-4,2,Core
+PH5299,P2,0-0-16,8,P2
+HS41XX,HSS Elective - II,3-0-0,3,HS2
+XX4198,Summer Internship*,0-0-12,3,SI
+XX4199,Project I,0-0-12,6,P1
+CE5199,Project - III,0-0-16,8,P3
+CE5299,Project - IV,0-0-36,18,P4
+XX5299,P4,0-0-36,18,P4
+CS32PQ,B. Tech. Elective - I,3-0-0,3,BTE_I
+CS41PQ,B. Tech. Elective – II,3-0-0,3,BTE-II
+CS5202,Theoretical Computer Science,3-0-0,3,Core
+CS62PQ,M. Tech. Elective – I,3-0-0,3,MTE-I
+CS61PQ,M. Tech. Elective – II,3-0-0,3,MTE-II
+CS6190,Project - III,0-0-16,8,P3
+CS6290,Project-IV,0-0-36,18,P4
+EE4196,Summer Internship*,0-0-12,3,SI
+EE4197,Project – I,0-0-12,6,P1
+EE4297,Project – II,0-0-12,6,P2
+EE5197,Project – III,0-0-16,8,P3
+EE5297,Project IV,0-0-36,18,P4
+EC4196,Summer Internship*,0-0-12,3,SI
+EC4197,Project – I,0-0-12,6,P1
+XX62PQ,M. Tech. Elective - I,3-0-0,3,MTE1
+EC4297,Project - II,0-0-12,6,P2
+EC5197,Project III,0-0-16,8,P3
+EC5297,Project IV,0-0-36,18,P4
+EC41PQ,B. Tech. Elective - I,3-0-0,3,BTE1
+EC4194,Summer Internship,0-0-6,3,SI
+EC4195,Project - I,0-0-12,6,P1
+EC4295,Project - II,0-0-12,6,P2
+EC5195,Project – III,0--0-16,8,P3
+EC5295,Project – IV,0-0-36,18,P4
+ME3101,Data Analytics and Machine Learning Tools for Engineers,1-2-1,3.5,Core
+MH4199,Mechatronics Project-I,0-0-12,6,P1
+RM6201,Research Methodology,3-1-0,4,RM
+MH5201,Sensors and Actuators,3-0-0,3,Core
+MH4299,Project-II,0-0-12,6,P2
+ME51XX,M. Tech. Elective - II,3-0-0,3,MTE2
+EE51XX,M. Tech. / Program Elective - IV,3-0-0,3,MTE4
+MH5199,Mechatronics Project-III,0-0-16,8,P3
+MH5299,Mechatronics Project-IV,0-0-36,18,P4
+HS2101,Mathematical Statistics,3-1-0,4,Core
+HS2102,Fundamentals of Economics,3-1-0,4,Core
+HS21**,HSS Elective-I,3-0-0,3,HS1
+HS2103,Multivariate Analysis and Basic Econometrics,3-0-0,3,Core
+HS2104,History of Economic Thought,3-0-0,3,Core
+HS2201,Growth and Development,3-1-0,4,Core
+HS2202,Microeconomic Theory,3-1-0,4,Core
+HS2203,Macroeconomic Theory,3-1-0,4,Core
+HS2204,Econometrics-I,3-1-0,4,E1
+****,IDE-1,3-0-0,3,IDE1
+HS3101,Econometrics – II,3-1-2,5,E2
+HS3102,Mathematical Economics,3-1-0,4,Core
+HS3103,International Trade and Investment,3-1-0,4,Core
+HS3104,Debate in Indian Economy,3-1-0,4,Core
+HSXXXX,IDE1I,3-0-0,3,IDE2
+HS3201,Categorical Data Analysis,3-1-2,5,Core
+HS3202,Environmental Economics,3-1-0,4,Core
+HS3203,Critical Economic Reading and Seminar,3-3-0,6,Core
+HS3204,Indian Financial System,3-1-0,4,Core
+HS3205,Health Economics,3-0-0,3,Core
+HS41**,Specialization Elective 1,3-1-0,4,SE1
+HS4198,Summer Internship*,0-0-12,3,SI
+HS4199,Project-I (Lab based project / Industry oriented  problem  solving  /  Academic internship   /   Case   Study   /   Design thinking-based  project-Capstone Project),0-0-12,6,P1
+HS42**,Specialization Elective 3,3-1-0,4,SE3
+HS4299,Project-II (Lab based project / Industry oriented problem solving / Academic internship / Case Study / Design thinking-based project- Capstone Project),0-0-16,8,P2
