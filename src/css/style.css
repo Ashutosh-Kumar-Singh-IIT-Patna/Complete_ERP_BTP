@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.registration-container {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4facfe;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.course-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+  border-left: 4px solid #4facfe;
+  padding-left: 10px;
+}
+
+.subsection-title {
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.dropdown {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.dropdown-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: linear-gradient(to right, #ffffff, #f8f8f8);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+}
+
+.dropdown select {
+  appearance: none;
+  background: none;
+  border: none;
+  width: 100%;
+  color: #333;
+}
+
+.line1 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4facfe;
+}
+
+.line2 {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  color: #777;
+}
+
+.part1 {
+  color: #666;
+}
+
+.part2 {
+  color: #aaa;
+}
+
+.disabled-dropdown .dropdown-button {
+  background: #f8f8f8;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  background: #4facfe;
+  color: white;
+  border: none;
+  border-radius: 5px;
+
