@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Sep 17, 2024 at 07:53 PM
--- Server version: 8.0.39
--- PHP Version: 8.2.8
+-- Generation Time: Jan 26, 2025 at 05:54 PM
+-- Server version: 8.0.40
+-- PHP Version: 8.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -137,7 +137,7 @@ CREATE TABLE `course_elective_mapping` (
   `type` varchar(5) NOT NULL,
   `floated` int NOT NULL,
   `fac_empid` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `fac_master` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `fac_masterid` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `max_capacity` int NOT NULL,
   `comment1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `comment2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
@@ -147,12 +147,12 @@ CREATE TABLE `course_elective_mapping` (
 -- Dumping data for table `course_elective_mapping`
 --
 
-INSERT INTO `course_elective_mapping` (`roll`, `sem`, `course_code`, `type`, `floated`, `fac_empid`, `fac_master`, `max_capacity`, `comment1`, `comment2`) VALUES
+INSERT INTO `course_elective_mapping` (`roll`, `sem`, `course_code`, `type`, `floated`, `fac_empid`, `fac_masterid`, `max_capacity`, `comment1`, `comment2`) VALUES
 ('2401CE', 4, 'CE2290', 'IDE1', 1, '', '', 130, '', ''),
 ('2401CE', 5, 'CE3190', 'IDE2', 1, '', '', 130, '', ''),
 ('2401CE', 7, 'CE4190', 'IDE3', 1, '', '', 130, '', ''),
 ('2401CE', 7, 'CE4191', 'IDE3', 1, '', '', 130, '', ''),
-('2401CE', 7, 'CE4101', 'DE1', 1, '', '', 130, '', ''),
+('2401CE', 7, 'CE4101', 'DE1', 1, '', '53', 130, '', ''),
 ('2401CE', 7, 'CE4102', 'DE1', 1, '', '', 130, '', ''),
 ('2401CE', 7, 'CE4103', 'DE1', 1, '', '', 130, '', ''),
 ('2401CE', 7, 'CE4104', 'DE1', 1, '', '', 130, '', ''),
@@ -309,7 +309,7 @@ INSERT INTO `course_elective_mapping` (`roll`, `sem`, `course_code`, `type`, `fl
 ('2401MC', 5, 'MA3151', 'IDE2', 1, '', '', 130, '', ''),
 ('2401MC', 5, 'MA3152', 'IDE2', 1, '', '', 130, '', ''),
 ('2401MC', 7, 'MA4151', 'IDE3', 1, '', '', 130, '', ''),
-('2401MC', 7, 'MA4152', 'IDE3', 1, '', '', 130, '', ''),
+('2401MC', 7, 'MA4152', 'IDE3', 1, '', '54', 130, '', ''),
 ('2401ME', 7, 'ME4101', 'DE1', 1, '', '', 130, '', ''),
 ('2401ME', 7, 'ME4102', 'DE1', 1, '', '', 130, '', ''),
 ('2401ME', 7, 'ME4104', 'DE1', 1, '', '', 130, '', ''),
@@ -345,8 +345,30 @@ CREATE TABLE `course_global_table` (
   `c` int NOT NULL,
   `grade` varchar(2) NOT NULL,
   `type` varchar(5) NOT NULL,
-  `date_of_entry` varchar(10) NOT NULL
+  `date_of_entry` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `course_global_table`
+--
+
+INSERT INTO `course_global_table` (`roll`, `sem`, `course_code`, `c`, `grade`, `type`, `date_of_entry`) VALUES
+('2401CE10', 5, 'CE3101', 4, 'AB', 'C', '2025-01-26 05:18:11'),
+('2401CE10', 5, 'CE3102', 4, 'AB', 'C', '2025-01-26 05:18:11'),
+('2401CE10', 5, 'CE3103', 5, 'AB', 'C', '2025-01-26 05:18:11'),
+('2401CE10', 5, 'CE3104', 4, 'AB', 'C', '2025-01-26 05:18:11'),
+('2401CE10', 5, 'MA3152', 3, 'AB', 'IDE', '2025-01-26 05:18:11'),
+('2401CE23', 1, 'CE3101', 4, 'AB', 'C', '2025-01-26 05:20:50'),
+('2401CE23', 2, 'CE3102', 4, 'AB', 'C', '2025-01-26 05:20:50'),
+('2401CE23', 3, 'CE3103', 5, 'AA', 'C', '2025-01-26 05:20:50'),
+('2401CE23', 4, 'CE3104', 4, 'BC', 'C', '2025-01-26 05:20:50'),
+('2401CE23', 5, 'MA3152', 3, 'AB', 'IDE', '2025-01-26 05:20:50'),
+('2401CE23', 6, 'CE4104', 3, 'AB', 'DE1', '2025-01-26 05:18:11'),
+('2401CE23', 7, 'CE4108', 3, 'AB', 'DE2', '2025-01-26 05:18:11'),
+('2401CE23', 7, 'CE4198', 3, 'AB', 'C', '2025-01-26 05:18:11'),
+('2401CE23', 7, 'CE4199', 6, 'AB', 'C', '2025-01-26 05:18:11'),
+('2401CE23', 7, 'HS4187', 3, 'AB', 'HS2', '2025-01-26 05:18:11'),
+('2401CE23', 7, 'MA4152', 3, 'AB', 'IDE', '2025-01-26 05:18:11');
 
 -- --------------------------------------------------------
 
@@ -1301,11 +1323,29 @@ CREATE TABLE `course_reg_table` (
 --
 
 INSERT INTO `course_reg_table` (`roll`, `sem`, `course_code`, `c`, `grade1`, `grade2`, `type`, `date_of_entry`) VALUES
-('2401CE32', 7, 'CE4101', 3, NULL, NULL, '0', '2024-09-15 10:05:45'),
-('2401CE32', 7, 'CE4105', 3, NULL, NULL, '0', '2024-09-15 10:05:45'),
-('2401CE32', 7, 'CE4198', 3, NULL, NULL, 'C', '2024-09-15 10:05:45'),
-('2401CE32', 7, 'CE4199', 6, NULL, NULL, 'C', '2024-09-15 10:05:45'),
-('2401CE32', 7, 'HS4185', 3, NULL, NULL, '0', '2024-09-15 10:05:45');
+('2401CE01', 7, 'CE4102', 3, NULL, NULL, 'DE1', '2025-01-26 13:54:23'),
+('2401CE01', 7, 'CE4108', 3, NULL, NULL, 'DE2', '2025-01-26 13:54:23'),
+('2401CE01', 7, 'CE4198', 3, NULL, NULL, 'C', '2025-01-26 13:54:23'),
+('2401CE01', 7, 'CE4199', 6, NULL, NULL, 'C', '2025-01-26 13:54:23'),
+('2401CE01', 7, 'HS4186', 3, NULL, NULL, 'HS2', '2025-01-26 13:54:23'),
+('2401CE01', 7, 'MA4152', 3, NULL, NULL, 'IDE', '2025-01-26 13:54:23'),
+('2401CE02', 7, 'CE4101', 3, NULL, NULL, 'DE1', '2025-01-26 13:54:35'),
+('2401CE02', 7, 'CE4105', 3, NULL, NULL, 'DE2', '2025-01-26 13:54:35'),
+('2401CE02', 7, 'CE4198', 3, NULL, NULL, 'C', '2025-01-26 13:54:35'),
+('2401CE02', 7, 'CE4199', 6, NULL, NULL, 'C', '2025-01-26 13:54:35'),
+('2401CE02', 7, 'HS4185', 3, NULL, NULL, 'HS2', '2025-01-26 13:54:35'),
+('2401CE02', 7, 'MA4152', 3, NULL, NULL, 'IDE', '2025-01-26 13:54:35'),
+('2401CE10', 5, 'CE3101', 4, NULL, NULL, 'C', '2025-01-25 16:14:33'),
+('2401CE10', 5, 'CE3102', 4, NULL, NULL, 'C', '2025-01-25 16:14:33'),
+('2401CE10', 5, 'CE3103', 5, NULL, NULL, 'C', '2025-01-25 16:14:33'),
+('2401CE10', 5, 'CE3104', 4, NULL, NULL, 'C', '2025-01-25 16:14:33'),
+('2401CE10', 5, 'MA3152', 3, NULL, NULL, 'IDE', '2025-01-25 16:14:33'),
+('2401CE23', 7, 'CE4104', 3, NULL, NULL, 'DE1', '2025-01-25 18:48:43'),
+('2401CE23', 7, 'CE4108', 3, NULL, NULL, 'DE2', '2025-01-25 18:48:43'),
+('2401CE23', 7, 'CE4198', 3, NULL, NULL, 'C', '2025-01-25 18:48:43'),
+('2401CE23', 7, 'CE4199', 6, NULL, NULL, 'C', '2025-01-25 18:48:43'),
+('2401CE23', 7, 'HS4187', 3, NULL, NULL, 'HS2', '2025-01-25 18:48:43'),
+('2401CE23', 7, 'MA4152', 3, NULL, NULL, 'IDE', '2025-01-25 18:48:43');
 
 -- --------------------------------------------------------
 
@@ -1382,9 +1422,36 @@ INSERT INTO `course_structure` (`parent_dept`, `course`, `specialization`, `mino
 (' Transportation Engineering', 'BTech + MTech', 'B. Tech. – M. Tech. Dual Degree in Transportation Engineering', '', 'NS', '', '', '', '', '', '', 'C,C,C,HS2, IDE3, SI,P1', 'C,C,MTE1,RM,P2', 'MTE1, MTE2, MTE3, P3', 'P4', '', ''),
 ('Electrical Engineering', 'BTech + Mtech', 'B. Tech. in Electronics and Communication Engineering (ECE) and M. Tech. in VLSI and Embedded Systems', '', '2402VL', 'C,C,C,C,C,HS1', 'C,C,C,C,C,IKS', 'C,C,C,C,C,HS1', 'C,C,C,C,C,IDE1 ', 'C,C,C,C,C,IDE2 ', 'C,C,C,C,C,C ', 'BTE1,BTE2,IDE3,HS2,SI,P1,C', 'RM,C,C,MTE1,P2', 'MTE2,MTE3,MTE4,P3', 'P4', '', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `requests`
+--
+
+CREATE TABLE `requests` (
+  `drop_course_code` varchar(8) NOT NULL,
+  `add_course_code` varchar(8) NOT NULL,
+  `roll` varchar(8) NOT NULL,
+  `sem` int NOT NULL,
+  `status` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `requests`
+--
+
+INSERT INTO `requests` (`drop_course_code`, `add_course_code`, `roll`, `sem`, `status`) VALUES
+('CE4104', 'CE4103', '2401CE23', 7, 0);
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `course_global_table`
+--
+ALTER TABLE `course_global_table`
+  ADD PRIMARY KEY (`roll`,`sem`,`course_code`);
 
 --
 -- Indexes for table `course_master`
