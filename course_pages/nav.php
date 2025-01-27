@@ -53,7 +53,7 @@
             <li><a href="add-drop.php" class="<?= basename($_SERVER['PHP_SELF']) == 'add-drop.php' ? 'active' : '' ?>">Add-Drop</a></li>
             <li><a href="registered_courses.php" class="<?= basename($_SERVER['PHP_SELF']) == 'registered-courses.php' ? 'active' : '' ?>">Registered Courses</a></li>
             <li><a href="spi-cpi.php" class="<?= basename($_SERVER['PHP_SELF']) == 'spi-cpi.php' ? 'active' : '' ?>">SPI/CPI</a></li>
-            <li><a href="transcript.php" class="<?= basename($_SERVER['PHP_SELF']) == 'transcript.php' ? 'active' : '' ?>">Transcript</a></li>
+            <li><a href="transcript.php" target="_blank" class="<?= basename($_SERVER['PHP_SELF']) == 'transcript.php' ? 'active' : '' ?>">Transcript</a></li>
             <li><a href="./../home.php">Log Out</a></li>
         </ul>
     </nav>

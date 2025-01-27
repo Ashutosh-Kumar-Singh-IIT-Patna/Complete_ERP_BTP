@@ -1,12 +1,28 @@
 <?php
 require_once 'functions.php';
 
-// Fetch course code from GET request
+// Start session for validation
+session_start();
+
+if (!isset($_SESSION['emp_id'])) {
+    die("Unauthorized access.");
+}
+
+$facMasterId = $_SESSION['emp_id'];
+
+// Fetch course code and semester from GET request
 $courseCode = $_GET['course_code'] ?? '';
-$semester = 7;
+$semester = 7; // You can modify this to fetch dynamically if needed.
 
 if (!$courseCode || !$semester) {
     die("Course code or semester not provided.");
+}
+
+// Validate course access for the professor
+$authQuery = "SELECT * FROM course_elective_mapping WHERE fac_masterid = ? AND course_code = ?";
+$authParams = [$facMasterId, $courseCode];
+if (!executeQuery($authQuery, $authParams, 'si', 'select')) {
+    die("Access denied.");
 }
 
 // Initialize messages
@@ -15,7 +31,7 @@ $errorMessage = '';
 
 try {
     // Fetch enrolled students and their grades
-    $query = "SELECT roll, grade1 FROM course_reg_table WHERE course_code = ? AND sem = ?";
+    $query = "SELECT roll, 'John Doe' as student_name, grade1 FROM course_reg_table WHERE course_code = ? AND sem = ?";
     $params = [$courseCode, $semester];
     $params_type = 'si';
     $students = executeQuery($query, $params, $params_type, 'select'); // Fetch all rows
@@ -35,14 +51,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             // Update grade in the database
-            $updateQuery = "UPDATE course_reg_table SET grade = ? WHERE roll_no = ? AND course_code = ?";
+            $updateQuery = "UPDATE course_reg_table SET grade1 = ? WHERE roll = ? AND course_code = ?";
             $updateParams = [$grade, $rollNo, $courseCode];
-            executeQuery($updateQuery, $updateParams);
+            executeQuery($updateQuery, $updateParams, 'sss', 'update');
         }
 
         $successMessage = "Grades updated successfully!";
         // Re-fetch updated data
-        $students = executeQuery($query, $params, true);
+        $students = executeQuery($query, $params, $params_type, 'select');
     } catch (Exception $e) {
         $errorMessage = "Error updating grades: " . $e->getMessage();
     }
@@ -53,10 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Professor Grades</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <title>Professor Grade Submission</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/prof_course_filling.css">
 </head>
 <body>
 <div id="demo">
@@ -70,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert alert-danger"><?= htmlspecialchars($errorMessage) ?></div>
     <?php endif; ?>
 
-    <!-- Responsive table starts here -->
+    <!-- Responsive table -->
     <div class="table-responsive-vertical shadow-z-1">
         <form method="POST" action="">
             <table id="table" class="table table-hover table-mc-light-blue">
@@ -84,15 +99,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <tbody>
                 <?php foreach ($students as $student): ?>
                     <tr>
-                        <td data-title="Name">John Doe</td>
+                        <td data-title="Name"><?= htmlspecialchars($student['student_name'] ?? 'N/A') ?></td>
                         <td data-title="Roll"><?= htmlspecialchars($student['roll']) ?></td>
                         <td data-title="Grade">
                             <input
                                 type="text"
-                                name="grades[<?= htmlspecialchars($student['roll_no']) ?>]"
-                                value="<?= htmlspecialchars($student['grade'] ?? '') ?>"
+                                name="grades[<?= htmlspecialchars($student['roll']) ?>]"
+                                value="<?= htmlspecialchars($student['grade1'] ?? '') ?>"
                                 class="form-control"
                                 maxlength="2"
+                                pattern="[A-FN]{1,2}"
+                                title="Enter a valid grade (A-F or NULL)"
                             >
                         </td>
                     </tr>
@@ -103,5 +120,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </div>
+<script src="js/prof_course_filling.js"></script>
 </body>
 </html>

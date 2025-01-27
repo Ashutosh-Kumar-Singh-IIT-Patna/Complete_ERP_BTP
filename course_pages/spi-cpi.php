@@ -1,7 +1,7 @@
 <?php
 
-require_once('config.php');
 require_once('functions.php');
+session_start();
 
 // Simulate receiving roll number (in a real implementation, this would be passed from the form)
 $roll_no = $_SESSION['roll'];

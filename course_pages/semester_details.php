@@ -1,5 +1,6 @@
 <?php
 require_once('functions.php');
+session_start();
 
 // Retrieve POST data
 $roll_no = $_POST['roll_no'];

@@ -1,22 +1,5 @@
 <?php
-require_once 'config.php';
-
-/**
- * Establish a secure connection to the MySQL database.
- * Uses mysqli and ensures the connection is secure.
- *
- * @return mysqli $conn - The MySQL connection object.
- * @throws Exception if the connection fails.
- */
-function dbConnect() {
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-    if ($conn->connect_error) {
-        throw new Exception("Database connection failed: " . $conn->connect_error);
-    }
-
-    return $conn;
-}
+require_once '../config.php';
 
 /**
  * Logs detailed activity including errors, queries, and function calls.
@@ -43,7 +26,7 @@ function logActivity($message, $query = '', $isError = false) {
     );
 
     // Write to log file
-    error_log($logMessage . PHP_EOL, 3, LOG_FILE);
+    error_log($logMessage . PHP_EOL, 3, LOG_FILE_PATH);
 }
 
 /**
@@ -54,13 +37,13 @@ function logActivity($message, $query = '', $isError = false) {
  * @param string $query The SQL query to execute, or a transaction control command.
  * @param array $params The parameters for the query (optional).
  * @param string $types The parameter types (optional).
- * @param string $returnType Type of the query to determine the return value (e.g., 'select', 'insert', 'transaction').
+ * @param string $returnType Type of the query to determine the return value (e.g., 'select', 'insert', 'update', 'transaction').
  * @return mixed The result of the query or transaction control.
  * @throws Exception If the query execution fails.
  */
 function executeQuery($query, $params = [], $types = '', $returnType = 'default') {
-    $conn = dbConnect();
-    $stmt = null;  // Initialize statement variable
+    $stmt = null;        // Initialize statement variable
+    $conn = db_connect(); // Get database connection
     try {
         // Handle transaction control queries
         if (in_array($returnType, ['begin', 'commit', 'rollback'])) {
@@ -86,7 +69,7 @@ function executeQuery($query, $params = [], $types = '', $returnType = 'default'
             }
         }
 
-        // For normal SQL queries
+        // Prepare the query
         $stmt = $conn->prepare($query);
         if (!$stmt) {
             throw new Exception("Failed to prepare the query: " . $conn->error);
@@ -102,9 +85,9 @@ function executeQuery($query, $params = [], $types = '', $returnType = 'default'
             throw new Exception("Failed to execute the query: " . $stmt->error);
         }
 
-        // Handle different return types (select, insert, etc.)
+        // Handle different return types
         switch ($returnType) {
-            case 'select':
+            case 'select': // Fetch and return rows for SELECT queries
                 $result = $stmt->get_result();
                 if ($result === false) {
                     throw new Exception("Failed to get result: " . $stmt->error);
@@ -113,16 +96,23 @@ function executeQuery($query, $params = [], $types = '', $returnType = 'default'
                 logActivity('SELECT query executed successfully', $query);
                 return $data;
 
-            case 'insert':
+            case 'insert': // Return the last inserted ID for INSERT queries
+                $lastInsertId = $conn->insert_id;
                 logActivity('INSERT query executed successfully', $query);
-                return $conn->insert_id;  // Return last inserted ID if needed
+                return $lastInsertId;
 
-            default:
+            case 'update': // Return affected rows for UPDATE queries
+                $affectedRows = $stmt->affected_rows;
+                logActivity('UPDATE query executed successfully', $query . " | Affected Rows: $affectedRows");
+                return $affectedRows;
+
+            default: // For other queries, just confirm execution
                 logActivity('Query executed successfully', $query);
                 return true;
         }
 
     } catch (Exception $e) {
+        // Log the error and rethrow
         logActivity('Query execution failed: ' . $e->getMessage(), $query, true);
         throw new Exception("Query failed: " . $e->getMessage());
     } finally {

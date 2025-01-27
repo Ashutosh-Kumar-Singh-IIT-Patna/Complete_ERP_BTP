@@ -29,6 +29,10 @@ define('DB_NAME', $_ENV['DB_NAME']);
 define('DB_PORT', $_ENV['DB_PORT']);
 define('LOG_FILE_PATH', $_ENV['LOG_FILE_PATH']);
 
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/logs/php_error.log');
+
 // Database connection function
 function db_connect() {
     $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);

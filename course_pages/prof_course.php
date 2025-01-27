@@ -1,9 +1,10 @@
 <?php
 require_once("functions.php");
+session_start();
 
 $_SESSION['emp_id'] = 54;
 $emp_id = $_SESSION['emp_id'];
-$current_sem = $_SESSION['sem'];
+$current_sem = 7; //$_SESSION['sem'];
 
 // Query to fetch courses taught by the professor
 $query_courses = "

@@ -1,7 +1,6 @@
 <?php
-require_once 'config.php';
 require_once 'functions.php';
-
+session_start();
 if(!isset($_SESSION['roll'])){
     header("Location: index.php");
 }
@@ -72,7 +71,7 @@ unset($_SESSION['MESSAGE']);
             border-radius: 5px;
         }
 
-        ul {
+        /* ul {
             list-style-type: none;
             padding: 0;
         }
@@ -82,7 +81,7 @@ unset($_SESSION['MESSAGE']);
             padding: 8px;
             margin-bottom: 5px;
             border-radius: 5px;
-        }
+        } */
 
         table {
             width: 100%;

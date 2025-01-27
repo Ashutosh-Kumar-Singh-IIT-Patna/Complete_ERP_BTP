@@ -1,6 +1,8 @@
 <?php
+
 require_once 'functions.php';
 
+session_start();
 // Class to hold course details
 class Details {
     public $course_code;
@@ -18,14 +20,10 @@ class Details {
     }
 }
 if(!isset($_SESSION['roll']) || !isset($_SESSION['sem_no'])) {
-    header("Location: ./../nav.html");
+    header("Location: index.php");
 }
-$roll = $_SESSION['roll']; // Replace with form input
+$roll = $_SESSION['roll']; 
 $sem_no = $_SESSION['sem_no'];
-// echo '<pre>';
-// echo $roll;
-// echo $sem_no;
-// echo '</pre>';
 $rollPref = substr($roll, 0, 6);
 $mp = [];
 

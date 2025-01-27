@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php'; // Database connection
 require_once 'functions.php'; // Helper functions
+session_start();
 
 if (!isset($_SESSION['roll']) || !isset($_SESSION['sem_no'])) {
     header("Location: index.php");
@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_drop_request'])) 
     </style>
 </head>
 <body>
-<?php include './../student_pages/nav.html'; ?>
+<?php include 'nav.php'; ?>
 
 <h1>Add-Drop Form</h1>
 
