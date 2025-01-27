@@ -41,68 +41,53 @@ unset($_SESSION['MESSAGE']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registered Courses</title>
+    <link rel="stylesheet" href="css/registered_courses.css">
     <style>
+        .info {
+        width: 85%;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        color: #555;
+        font-size: 0.95em;
+        }
+
+        .info strong {
+        color: #333;
+        }
+
         .popup {
-            position: fixed;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            background-color: #f8f8f8;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            z-index: 1000;
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        z-index: 1000;
+        border-radius: 5px;
         }
 
         .popup .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #999;
-            font-size: 20px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #888;
+        font-size: 20px;
         }
 
         .popup .message {
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-        }
-
-        /* ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            background-color: #f0f0f0;
-            padding: 8px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-        } */
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f8f8f8;
-        }
-
-        .info {
-            margin-bottom: 20px;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f1f8ff;
+        border-left: 5px solid #007bff;
+        border-radius: 5px;
+        color: #0056b3;
         }
     </style>
 </head>
@@ -110,7 +95,6 @@ unset($_SESSION['MESSAGE']);
 <?php include 'nav.php'; ?>
 
 
-<!-- Display Name, Roll No, and Branch (random data for now) -->
 <div class="info">
     <strong>Name:</strong> John Doe<br>
     <strong>Roll No:</strong> <?php echo htmlspecialchars($roll); ?><br>
@@ -118,12 +102,12 @@ unset($_SESSION['MESSAGE']);
 </div>
 
 <?php if (!empty($registered_courses)): ?>
-    <table>
+    <table class="container">
         <thead>
             <tr>
-                <th>Course Code</th>
-                <th>Course Name</th>
-                <th>L-T-P-C</th>
+                <th><h1>Course Code</h1></th>
+                <th><h1>Course Name</h1></th>
+                <th><h1>L-T-P-C</h1></th>
             </tr>
         </thead>
         <tbody>

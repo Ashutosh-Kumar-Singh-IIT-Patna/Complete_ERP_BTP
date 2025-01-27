@@ -101,3 +101,387 @@ Traceback: Array
 [2025-01-27 16:51:00] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT cem.course_code as course_code,\r\n           cm.course_name as course_name,\r\n           cm.`l-t-p` as l_t_p,\r\n           cm.c as c,\r\n           cem.max_capacity as max_capacity\r\n    FROM course_elective_mapping cem\r\n    JOIN course_master cm ON cem.course_code = cm.course_code\r\n    WHERE cem.type LIKE 'IDE%'\r\n      AND cem.floated = 1\r\n      AND cem.sem = ?\r\n      AND cem.roll LIKE CONCAT(?, '%')"
 [2025-01-27 16:51:00] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT course_code\r\n    FROM course_elective_mapping\r\n    WHERE roll LIKE CONCAT(?, '%')\r\n      AND sem = ?\r\n      AND type LIKE 'IDE%'\r\n      AND floated = 1"
 [2025-01-27 16:51:02] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:00:08] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:01:05] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:01:06] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:01:08] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:03:01] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:03:04] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:03:19] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:03:30] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:03:36] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:03:37] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:03:39] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:03:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:05:16] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:05:39] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:05:46] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:06:12] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:06:30] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:06:47] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_global_table WHERE roll = ? ORDER BY sem"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:48] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT sem, course_code, c, grade, `type` FROM course_global_table WHERE roll = ? ORDER BY sem"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:06:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:07:06] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:07:26] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:07:33] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT COUNT(*) AS count FROM course_reg_table WHERE roll = ? AND sem = ?"
+[2025-01-27 17:07:33] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT cr.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits, cr.type\r\n                   FROM course_reg_table cr\r\n                   JOIN course_master cm ON cr.course_code = cm.course_code\r\n                   WHERE cr.roll = ? AND cr.sem = ?\r\n                   AND (cr.type LIKE 'HS%' OR cr.type LIKE 'IDE%' OR cr.type LIKE 'DE%')"
+[2025-01-27 17:07:33] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:07:33] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:07:33] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:07:33] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type LIKE 'IDE%'\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll LIKE CONCAT(?, '%')\r\n            AND cem.roll NOT LIKE CONCAT(?, '%')"
+[2025-01-27 17:08:28] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:08:30] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT COUNT(*) AS count FROM course_reg_table WHERE roll = ? AND sem = ?"
+[2025-01-27 17:08:30] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT cr.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits, cr.type\r\n                   FROM course_reg_table cr\r\n                   JOIN course_master cm ON cr.course_code = cm.course_code\r\n                   WHERE cr.roll = ? AND cr.sem = ?\r\n                   AND (cr.type LIKE 'HS%' OR cr.type LIKE 'IDE%' OR cr.type LIKE 'DE%')"
+[2025-01-27 17:08:30] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:08:30] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:08:30] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:08:30] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type LIKE 'IDE%'\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll LIKE CONCAT(?, '%')\r\n            AND cem.roll NOT LIKE CONCAT(?, '%')"
+[2025-01-27 17:08:35] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_global_table WHERE roll = ? ORDER BY sem"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:49] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT sem, course_code, c, grade, `type` FROM course_global_table WHERE roll = ? ORDER BY sem"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:53] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT course_name, `l-t-p` FROM course_master WHERE course_code = ?"
+[2025-01-27 17:08:59] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT COUNT(*) AS count FROM course_reg_table WHERE roll = ? AND sem = ?"
+[2025-01-27 17:08:59] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT cr.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits, cr.type\r\n                   FROM course_reg_table cr\r\n                   JOIN course_master cm ON cr.course_code = cm.course_code\r\n                   WHERE cr.roll = ? AND cr.sem = ?\r\n                   AND (cr.type LIKE 'HS%' OR cr.type LIKE 'IDE%' OR cr.type LIKE 'DE%')"
+[2025-01-27 17:08:59] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:08:59] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:08:59] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:08:59] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type LIKE 'IDE%'\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll LIKE CONCAT(?, '%')\r\n            AND cem.roll NOT LIKE CONCAT(?, '%')"
+[2025-01-27 17:09:01] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\nSELECT course_core_mapping.course_code as course_code, course_master.course_name as course_name, course_master.`l-t-p` as l_t_p, course_master.c as c\r\nFROM course_core_mapping\r\nJOIN course_master ON course_core_mapping.course_code = course_master.course_code\r\nWHERE course_core_mapping.roll = ? AND course_core_mapping.sem = ? AND course_core_mapping.floated = 1"
+[2025-01-27 17:09:01] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT sem_7 FROM course_structure WHERE roll = ?"
+[2025-01-27 17:09:01] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT course_elective_mapping.course_code as course_code, course_master.course_name as course_name, course_master.`l-t-p` as l_t_p, course_master.c as c, course_elective_mapping.max_capacity as max_capacity\r\n    FROM course_elective_mapping\r\n    JOIN course_master ON course_elective_mapping.course_code = course_master.course_code\r\n    WHERE course_elective_mapping.type = ? AND course_elective_mapping.floated = 1 and course_elective_mapping.sem = ? and course_elective_mapping.roll = ?"
+[2025-01-27 17:09:01] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT course_elective_mapping.course_code as course_code, course_master.course_name as course_name, course_master.`l-t-p` as l_t_p, course_master.c as c, course_elective_mapping.max_capacity as max_capacity\r\n    FROM course_elective_mapping\r\n    JOIN course_master ON course_elective_mapping.course_code = course_master.course_code\r\n    WHERE course_elective_mapping.type = ? AND course_elective_mapping.floated = 1 and course_elective_mapping.sem = ? and course_elective_mapping.roll = ?"
+[2025-01-27 17:09:01] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT course_elective_mapping.course_code as course_code, course_master.course_name as course_name, course_master.`l-t-p` as l_t_p, course_master.c as c, course_elective_mapping.max_capacity as max_capacity\r\n    FROM course_elective_mapping\r\n    JOIN course_master ON course_elective_mapping.course_code = course_master.course_code\r\n    WHERE course_elective_mapping.type = ? AND course_elective_mapping.floated = 1 and course_elective_mapping.sem = ? and course_elective_mapping.roll = ?"
+[2025-01-27 17:09:01] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT cem.course_code as course_code,\r\n           cm.course_name as course_name,\r\n           cm.`l-t-p` as l_t_p,\r\n           cm.c as c,\r\n           cem.max_capacity as max_capacity\r\n    FROM course_elective_mapping cem\r\n    JOIN course_master cm ON cem.course_code = cm.course_code\r\n    WHERE cem.type LIKE 'IDE%'\r\n      AND cem.floated = 1\r\n      AND cem.sem = ?\r\n      AND cem.roll LIKE CONCAT(?, '%')"
+[2025-01-27 17:09:01] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT course_code\r\n    FROM course_elective_mapping\r\n    WHERE roll LIKE CONCAT(?, '%')\r\n      AND sem = ?\r\n      AND type LIKE 'IDE%'\r\n      AND floated = 1"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT COUNT(*) AS count FROM course_reg_table WHERE roll = ? AND sem = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT cr.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits, cr.type\r\n                   FROM course_reg_table cr\r\n                   JOIN course_master cm ON cr.course_code = cm.course_code\r\n                   WHERE cr.roll = ? AND cr.sem = ?\r\n                   AND (cr.type LIKE 'HS%' OR cr.type LIKE 'IDE%' OR cr.type LIKE 'DE%')"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type = ?\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n            SELECT cem.course_code, cm.course_name, cm.`l-t-p` AS ltp, cm.c AS credits\r\n            FROM course_elective_mapping cem\r\n            JOIN course_master cm ON cem.course_code = cm.course_code\r\n            WHERE cem.type LIKE 'IDE%'\r\n            AND cem.floated = 1\r\n            AND cem.sem = ?\r\n            AND cem.roll LIKE CONCAT(?, '%')\r\n            AND cem.roll NOT LIKE CONCAT(?, '%')"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_global_table WHERE roll = ? ORDER BY sem"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:09:27] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "SELECT * FROM course_master WHERE course_code = ?"
+[2025-01-27 17:11:19] Function: executeQuery (Line 96) | SELECT query executed successfully | Query: "\r\n    SELECT crt.course_code, cm.course_name, CONCAT(cm.`l-t-p`, '-', cm.c) as l_t_p_c\r\n    FROM course_reg_table crt\r\n    JOIN course_master cm ON crt.course_code = cm.course_code\r\n    WHERE crt.roll = ? AND crt.sem = ?"
+Executed Query: SELECT id, gender AS value FROM acad_gender
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 8
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, language AS value FROM acad_mother_tongue
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 9
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, profession AS value FROM acad_profession
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 10
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, religion AS value FROM acad_religion
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 11
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, state AS value FROM acad_state
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 12
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, blood_group AS value FROM acad_blood_group
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 13
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, country_code AS value FROM acad_country_code
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 14
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, department AS value FROM acad_department
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 15
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, branch AS value FROM acad_branch
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 16
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, specialization AS value FROM acad_specialization
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 17
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, nationality AS value FROM acad_nationality
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 18
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, category AS value FROM acad_category
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 19
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, hostel_name AS value FROM acad_hostel_name
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 20
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, hostel_block AS value FROM acad_hostel_block
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 21
+            [function] => get_dropdown_options
+        )
+
+)
+Executed Query: SELECT id, course AS value FROM acad_course
+Traceback: Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/functions.php
+            [line] => 70
+            [function] => execute_query
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/student_pages/student_register.php
+            [line] => 22
+            [function] => get_dropdown_options
+        )
+
+)
