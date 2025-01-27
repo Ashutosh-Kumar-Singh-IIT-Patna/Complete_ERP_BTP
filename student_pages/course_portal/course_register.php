@@ -1,6 +1,4 @@
 <?php
-
-require_once 'config.php'; // Ensure you have a proper config.php file for DB connection
 require_once 'functions.php';
 
 // Class to hold course details
@@ -20,10 +18,14 @@ class Details {
     }
 }
 if(!isset($_SESSION['roll']) || !isset($_SESSION['sem_no'])) {
-    header("Location: index.php");
+    header("Location: ./../nav.html");
 }
 $roll = $_SESSION['roll']; // Replace with form input
 $sem_no = $_SESSION['sem_no'];
+// echo '<pre>';
+// echo $roll;
+// echo $sem_no;
+// echo '</pre>';
 $rollPref = substr($roll, 0, 6);
 $mp = [];
 

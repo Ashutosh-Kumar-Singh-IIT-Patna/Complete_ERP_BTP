@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_drop_request'])) 
     </style>
 </head>
 <body>
-<?php include 'nav.php'; ?>
+<?php include './../student_pages/nav.html'; ?>
 
 <h1>Add-Drop Form</h1>
 

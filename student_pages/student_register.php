@@ -53,6 +53,7 @@ $course_options = get_dropdown_options('acad_course');
     </style>
 </head>
 <body>
+<?php include 'nav.html'; ?>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">

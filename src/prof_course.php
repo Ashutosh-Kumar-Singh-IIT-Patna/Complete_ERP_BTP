@@ -156,7 +156,7 @@ $currentTerm = getCurrentTerm();
     <p>Term: <?php echo $currentTerm; ?></p>
 
     <?php foreach ($courses as $course): ?>
-        <div class="card" onclick="window.location.href='course_filling.php?course_code=<?php echo $course['course_code']; ?>'">
+        <div class="card" onclick="window.location.href='prof_course_filling.php?course_code=<?php echo $course['course_code']; ?>'">
             <h3><?php echo $course['course_name']; ?></h3>
             <p>Course Code: <?php echo $course['course_code']; ?></p>
             <div class="progress-container">

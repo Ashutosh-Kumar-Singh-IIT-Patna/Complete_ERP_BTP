@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Dropdown Navigation Bar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="css/nav.css">
+
+</head>
+<body>
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="#!">LOGO</a>
+    </div>
+    <nav>
+      <div class="nav-mobile">
+        <a id="nav-toggle" href="#!"><span></span></a>
+      </div>
+      <ul class="nav-list">
+        <!-- Setting the links to #! will ensure that no action takes place on click. -->
+        <li><a href="#!">Profile</a>
+          <ul class="nav-dropdown">
+            <li><a href="student_register.php">Profile Update</a></li>
+            <li><a href="student_profile.php">View Profile</a></li>
+          </ul>
+        </li>
+        <li><a href="#!">Course Portal</a>
+          <ul class="nav-dropdown">
+            <li><a href="./../src/course_register2.php">Register</a></li>
+            <li><a href="./../src/registered_courses.php">View Courses</a></li>
+            <li><a href="./../src/add-drop.php">Add/Drop</a></li>
+            <li><a href="./../src/spi-cpi.php">SPI/CPI</a></li>
+            <li><a href="./../src/transcript.php" target="_blank">Transcript</a></li>
+          </ul>
+        </li>
+        <li><a href="student_documents_upload.php">Upload Documnets</a></li>
+        <li><a href="#!">Fee Portal</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="scripts/nav.js"></script>
+
+</body>
+</html>

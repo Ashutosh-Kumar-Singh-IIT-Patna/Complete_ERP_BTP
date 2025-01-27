@@ -34,7 +34,7 @@
     </style>
 </head>
 <body>
-
+<?php include 'nav.html'; ?>
 <div class="container">
     <h2 class="text-center mb-4">Upload Your Documents</h2>
 
