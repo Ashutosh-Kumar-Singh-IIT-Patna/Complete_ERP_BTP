@@ -1,6 +1,0 @@
-.env
-logs/log.txt
-logs/php_errors.log
-todo
-.DS_Store
-config.php

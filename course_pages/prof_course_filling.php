@@ -31,7 +31,13 @@ $errorMessage = '';
 
 try {
     // Fetch enrolled students and their grades
-    $query = "SELECT roll, 'John Doe' as student_name, grade1 FROM course_reg_table WHERE course_code = ? AND sem = ?";
+    $query = "SELECT crt.roll, 'John Doe' as student_name, crt.grade1
+                  FROM course_reg_table crt
+                  WHERE crt.course_code = ? AND crt.sem = ?";
+//     $query = "SELECT crt.roll, au.full_name as student_name, crt.grade1
+//               FROM course_reg_table crt
+//               INNER JOIN acad_users au ON crt.roll = au.roll_number
+//               WHERE crt.course_code = ? AND crt.sem = ?";
     $params = [$courseCode, $semester];
     $params_type = 'si';
     $students = executeQuery($query, $params, $params_type, 'select'); // Fetch all rows
@@ -85,6 +91,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert alert-danger"><?= htmlspecialchars($errorMessage) ?></div>
     <?php endif; ?>
 
+    <button type="button" id="uploadCsvBtn" class="btn btn-secondary">Upload CSV</button>
+        <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+
+        <div id="mappingModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Configure CSV Mapping</h2>
+                <div id="mappingOptions"></div>
+                <button id="confirmMapping" class="btn btn-primary">Confirm Mapping</button>
+            </div>
+        </div>
+
     <!-- Responsive table -->
     <div class="table-responsive-vertical shadow-z-1">
         <form method="POST" action="">
@@ -120,6 +137,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </div>
-<script src="js/prof_course_filling.js"></script>
+<script src="scripts/prof_course_filling.js"></script>
 </body>
 </html>

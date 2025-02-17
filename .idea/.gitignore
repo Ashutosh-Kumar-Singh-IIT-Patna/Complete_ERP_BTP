@@ -1,3 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+.env
+logs/log.txt
+logs/php_errors.log
+todo
+.DS_Store
+config.php
