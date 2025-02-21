@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $file = $_FILES['document'];
     
     $timestamp = time();
-    $filename = "uploads/fee_documents/{$roll_number}_{$semester}_{$timestamp}.pdf";
+    $filename = "uploads/profile_images/{$roll_number}_{$semester}_{$timestamp}.pdf";
 
     if (move_uploaded_file($file['tmp_name'], $filename)) {
         echo json_encode(['success' => true, 'path' => $filename]);

@@ -18,3 +18,26 @@
 [27-Jan-2025 16:50:45 UTC] PHP Warning:  Undefined global variable $_SESSION in /var/www/html/course_pages/registered_courses.php on line 22
 [27-Jan-2025 16:50:45 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/course_pages/registered_courses.php on line 22
 [27-Jan-2025 16:50:45 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/course_pages/registered_courses.php on line 116
+[17-Feb-2025 14:01:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function dbConnect() in /var/www/html/course_pages/course_register2.php:108
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/course_pages/course_register2.php on line 108
+[17-Feb-2025 14:01:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function dbConnect() in /var/www/html/course_pages/course_register2.php:108
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/course_pages/course_register2.php on line 108
+[17-Feb-2025 14:01:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function dbConnect() in /var/www/html/course_pages/course_register2.php:108
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/course_pages/course_register2.php on line 108
+[17-Feb-2025 14:02:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function dbConnect() in /var/www/html/course_pages/course_register2.php:108
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/course_pages/course_register2.php on line 108
+[17-Feb-2025 14:05:42 UTC] PHP Warning:  foreach() argument must be of type array|object, string given in /var/www/html/course_pages/registered_courses.php on line 131
+[17-Feb-2025 14:13:30 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'your_database.acad_fee' doesn't exist in /var/www/html/functions.php:9
+Stack trace:
+#0 /var/www/html/functions.php(9): mysqli->prepare('SELECT * FROM a...')
+#1 /var/www/html/student_pages/student_get_fee_details_backend.php(13): execute_query('SELECT * FROM a...', Array)
+#2 {main}
+  thrown in /var/www/html/functions.php on line 9
