@@ -4,6 +4,11 @@ FROM php:8.2-apache
 # Install necessary PHP extensions
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
+RUN apt-get update; \
+    apt-get install -y libmagickwand-dev; \
+    pecl install imagick; \
+    docker-php-ext-enable imagick;
+
 # Add this line before the WORKDIR command in your Dockerfile
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 

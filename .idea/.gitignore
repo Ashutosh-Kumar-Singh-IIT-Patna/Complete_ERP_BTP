@@ -7,3 +7,6 @@ logs/php_errors.log
 todo
 .DS_Store
 config.php
+.idea/
+logs/*
+*.DS_Store
