@@ -75,7 +75,7 @@ $synopsisSubmission2 = formatDate($data['date_of_synopsis_attempt_2'] ?? '');
 $panelOfExaminers = formatDate($data['date_of_panel_of_examiners'] ?? '');
 $recommendationForVivaVoce = formatDate($data['date_of_viva_voce'] ?? '');
 $thesisSubmissionReport = formatDate($data['date_of_thesis_submission'] ?? '');
-$finalRecomendationForDegree = formatDate($data['date_of_final_recomendation'] ?? '');
+$finalRecomendationForDegree = formatDate($data['date_of_final_recommendation'] ?? '');
 $duration = calculateDuration($doctoralComitteFormation, $finalRecomendationForDegree);
 
 
