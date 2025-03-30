@@ -1,4 +1,5 @@
 Deshik:
-1. Support csv filling for prof_course_filling.php
-2. Simulation of requests for course add/drop
-3. Transcript changes
+1. Course Register button
+2. Download CSV file and upload prof course filling
+3. Add headers and bootstrap to all pages
+4. Add static mapping change for all students to pages
