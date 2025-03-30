@@ -153,8 +153,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-bold"> <?php echo $label; ?> </label>
                                 <select name="<?php echo $key; ?>" class="form-control" onchange="updateHiddenInput(this, '<?php echo $key; ?>_id');">
-                                    <?php if ($key === 'dc_chair'): ?>
-                                        <option value="HoD (dept)" data-id="3" selected>HoD (dept)</option>
+                                <?php if ($key === 'dc_chair'): ?>
+                                        <option value="HoD (dept)" data-id="-3" selected>HoD (Dept)</option>
                                     <?php else: ?>
                                         <?php foreach ($facultyOptions as $faculty): ?>
                                             <option value="<?php echo $faculty['display_name']; ?>" data-id="<?php echo $faculty['emp_id']; ?>" <?php echo ($data[$key] ?? '') === $faculty['display_name'] ? 'selected' : ''; ?>>

@@ -23,6 +23,7 @@ class MYPDF extends TCPDF {
 }
 
 $sql = 'SELECT name_of_scholar, dept, roll, nationality, gender, scholar_phd_category, mobile, email, supervisor, co_supervisor, sponsored_agency_name, proj_num, proj_name, proj_tenure, broad_research_area, form_submit_flag_dc,
+        dc_chair, dc_internal_member, dc_external_member, dc_additional_member_1, supervisor, co_supervisor,
         date_of_dc_formation, date_of_compre_exam_committee, date_of_compre_attempt_1, date_of_compre_attempt_2, date_of_enrollment, date_of_reg_1, date_of_reg_2, date_of_enhancement, date_of_aps_1, date_of_aps_2, date_of_aps_3, date_of_aps_4, date_of_aps_5, 
         date_of_synopsis_attempt_1, date_of_synopsis_attempt_2, date_of_panel_of_examiners, date_of_viva_voce, date_of_thesis_submission , date_of_final_recommendation
         FROM phd_scholar WHERE roll = ?'; //Important
@@ -56,6 +57,13 @@ $broadAreaOfResearch = $data['broad_research_area'] ?? '';
 $dateOfSeminar = formatDate($data['date_of_dc_formation'] ?? '');  //Important
 // $commentByDC = $data['dc_comment_in_aps_1'] ?? '';  //Important
 // $performance = $data['result_of_aps_1'];  // Important
+
+$dcChair = $data['dc_chair'] ?? '';
+$dcInternalMember = $data['dc_internal_member'] ?? '';
+$dcExternalMember = $data['dc_external_member'] ?? '';
+$dcAdditionalMember1 = $data['dc_additional_member_1'] ?? '';
+$supervisor = $data['supervisor'] ?? '';
+$coSupervisor = $data['co_supervisor'] ?? '';
  
 $doctoralComitteFormation = formatDate($data['date_of_dc_formation'] ?? '');
 $comprehensiveExamCommitteeProcess = formatDate($data['date_of_compre_exam_committee'] ?? '');
@@ -171,9 +179,52 @@ $duration = calculateDuration($doctoralComitteFormation, $finalRecomendationForD
 
     $pdf->Ln(10);
 
+    $html = '<b>COMPOSITION OF THE DOCTORAL COMMITTEE (DC)</b>';
+    $pdf -> MultiCell($available_width, 0,   $html,   0,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = '<b>MEMBER and CHAIRMAN :</b>';
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    
+    $html = $dcChair;
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = '<b>SUPERVISOR :</b>';
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    
+    $html = $supervisor;
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = '<b>CO-SUPERVISOR :</b>';
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = $coSupervisor;
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = '<b>DC INTERNAL MEMBER :</b>';
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = $dcInternalMember;
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = '<b>DC EXTERNAL MEMBER :</b>';
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = $dcExternalMember;
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = '<b>DC ADDITIONAL MEMBER 1 :</b>';
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = $dcAdditionalMember1;
+    $pdf -> MultiCell(0.5 * $available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    
+    $pdf->Ln(10);
+
     $html = '<b>Important Dates : </b>';
     $pdf -> MultiCell($available_width, 0,   $html,   0,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
     $pdf->SetFont('times', '', 7.5);
+
     $html = '<b>1. Doctoral Committee Formation</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     

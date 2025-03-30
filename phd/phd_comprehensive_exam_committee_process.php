@@ -8,7 +8,7 @@ $errors = [];
 
 $roll = $_SESSION['roll'] ?? '1921CS12'; 
 $data = [];
-$formName = 'Compre. Exam Committee';
+$formName = 'Comprehensive Exam Committee';
 $formSubmitted = false; // Flag to check if the form is already submitted
 
 $mp = [
@@ -24,18 +24,38 @@ $mp = [
     'proj_name' => 'Project Name (If working on a Project)',
     'proj_tenure' => 'Project Tenure(X months) (If working on a Project)',
     'sponsored_agency_name' => 'Sponsored Agency (if any)',
+    'dc_chair' => 'Member and Chairman',
+    'supervisor' => 'Supervisor',
+    'co_supervisor' => 'Co-Supervisor',
+    'dc_internal_member' => 'DC Internal Member',
+    'dc_external_member' => 'DC External Member',
+    'dc_additional_member_1' => 'DC Additional Member 1',
+];
+
+$course = [
+    'dc_course_work_fac_1' => 'Course Work Faculty 1',
+    'dc_course_work_fac_2' => 'Course Work Faculty 2',
+    'dc_course_work_fac_3' => 'Course Work Faculty 3',
+    'dc_course_work_fac_4' => 'Course Work Faculty 4',
+    'dc_course_work_fac_5' => 'Course Work Faculty 5',
+    'dc_course_work_fac_6' => 'Course Work Faculty 6',
+    'dc_course_work_fac_7' => 'Course Work Faculty 7',
+    'dc_course_work_fac_8' => 'Course Work Faculty 8',
+    'dc_course_work_fac_9' => 'Course Work Faculty 9',
+    'dc_course_work_fac_10' => 'Course Work Faculty 10',
 ];
 
 if ($roll) {
     // Fetch scholar details along with form_submit_flag_thesis
-    $sql = "SELECT name_of_scholar, dept, roll, nationality, gender, category, scholar_phd_category, mobile, email, proj_num, proj_name, proj_tenure, sponsored_agency_name, form_submit_flag_aps_1
+    $sql = "SELECT name_of_scholar, dept, roll, nationality, gender, category, scholar_phd_category, mobile, email, proj_num, proj_name, proj_tenure, sponsored_agency_name, 
+            form_submit_flag_compre_exam_committee, dc_chair, supervisor, co_supervisor, dc_internal_member, dc_external_member, dc_additional_member_1
             FROM phd_scholar WHERE roll = ?";
     $params = ["s", $roll];
     $result = execute_query($sql, $params);
 
     if ($result['success'] && $result['data']) {
         $data = $result['data'][0];
-        $formSubmitted = ($data['form_submit_flag_aps_1'] == 1); // Check if form was already submitted
+        $formSubmitted = ($data['form_submit_flag_compre_exam_committee'] == 1); // Check if form was already submitted
     } else {
         $errors['fetch'] = "Failed to fetch user details.";
     }
@@ -43,131 +63,109 @@ if ($roll) {
     $errors['session'] = "Session expired. Please log in again.";
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && !$formSubmitted) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     function clean_input($data) {
         return htmlspecialchars(stripslashes(trim($data)));
     }
 
-    $required_fields = ['titleOfThesis', 'dateOfRegistration'];
+    $updateData = [];
+    if (!empty($_POST['date_of_compre_exam_committee'])) {
+        $updateData['date_of_compre_exam_committee'] = clean_input($_POST['date_of_compre_exam_committee']);
+    }
 
-    foreach ($required_fields as $field) {
-        if (empty($_POST[$field])) {
-            $errors[$field] = "This field is required.";
+    foreach ($course as $key => $label) {
+        if (!empty($_POST[$key])) {
+            $updateData[$key] = clean_input($_POST[$key]);
         }
     }
 
-    if (empty($errors)) {
-        $titleOfThesis = clean_input($_POST['titleOfThesis']);
-        $dateOfRegistration = clean_input($_POST['dateOfRegistration']);
-        $dcComment = clean_input($_POST['dcComment']);
-        $result = clean_input($_POST['result']);
+    if (!empty($updateData)) {
+        $updateData['form_submit_flag_compre_exam_committee'] = 1;
 
-        if (!$roll) {
-            $errors['session'] = "Session expired. Please log in again.";
+        $updateCols = implode(' = ?, ', array_keys($updateData)) . ' = ?';
+        $params = array_values($updateData);
+        $params[] = $roll; // Add roll number to WHERE clause
+
+        $sql = "UPDATE phd_scholar SET $updateCols WHERE roll = ?";
+        $result = execute_query($sql, array_merge([str_repeat('s', count($updateData)) . 's'], $params));
+
+        if ($result['success']) {
+            $_SESSION['success'] = $formName . ' details updated successfully!';
+            header("Location: buffer.php");
+            exit();
         } else {
-            $active = 1;
-            $sql = "UPDATE phd_scholar SET title_of_aps_1 = ?, date_of_aps_1 = ?, dc_comment_in_aps_1 = ?, result_of_aps_1 = ?, form_submit_flag_aps_1 = ? WHERE roll = ?";
-            $params = ["ssssis", $titleOfThesis, $dateOfRegistration, $dcComment, $result, $active, $roll];
-
-            $result = execute_query($sql, $params);
-
-            if ($result['success']) {
-                $_SESSION['success'] = 'Application '.$formName.' submitted successfully!';
-                header("Location: buffer.php");
-                exit();
-            } else {
-                $errors['db'] = "Database error. Please try again.";
-            }
+            $errors['db'] = "Database error: " . $result['error'];
         }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $formName ?></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; background-color: #f8f9fa; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-        .form-group { margin-bottom: 15px; }
-        label { font-weight: bold; display: block; }
-        input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-        .error { color: red; font-size: 12px; }
-        button { background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
-        button:hover { background-color: #0056b3; }
-    </style>
 </head>
-<body>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <h2 class="text-center mb-4"> <?php echo $formName ?> </h2>
+            <?php if (!empty($_SESSION['success'])): ?>
+                <div class="alert alert-success"> <?php echo $_SESSION['success']; unset($_SESSION['success']); ?> </div>
+            <?php endif; ?>
+            
+            <?php if ($formSubmitted): ?>
+                <div class="alert alert-info text-center">You have already submitted this form.</div>
+            <?php else: ?>
+                <form action="" method="POST">
+                    <div class="row">
+                        <?php foreach ($mp as $key => $value): ?>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold"> <?php echo $value; ?> </label>
+                                <input type="text" name="<?php echo $key; ?>" class="form-control" value="<?php echo htmlspecialchars($data[$key] ?? ''); ?>" disabled readonly>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
 
-<div class="container">
-    <h2><?php echo $formName ?></h2>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" for="date_of_compre_exam_committee">Date of <?php echo $formName ?>:</label>
+                        <input type="text" id="date_of_compre_exam_committee" name="date_of_compre_exam_committee" class="form-control" placeholder="YYYY-MM-DD" required>
+                        <span class="error"><?php echo $errors['date_of_compre_exam_committee'] ?? ''; ?></span>
+                    </div>
 
-    <?php if (!empty($_SESSION['success'])): ?>
-        <p style="color: green;"><?php echo $_SESSION['success']; unset($_SESSION['success']); ?></p>
-    <?php endif; ?>
+                    <div class="row">
+                        <?php foreach ($course as $key => $value): ?>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold"> <?php echo $value; ?> </label>
+                                <select name="<?php echo $key; ?>" class="form-select" required>
+                                    <option value="NA (NA)">NA (NA)</option>
+                                    <option value="Course Work (PhD)">Course Work (PhD)</option>
+                                </select>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
 
-    <?php if (!empty($errors['fetch'])): ?>
-        <p class="error"><?php echo $errors['fetch']; ?></p>
-    <?php endif; ?>
+                    <script>
+                        $(document).ready(function () {
+                            $("#date_of_compre_exam_committee").datepicker({
+                                dateFormat: "yy-mm-dd", // Change to SQL-friendly format
+                                changeMonth: true,
+                                changeYear: true,
+                                yearRange: "2000:2030"
+                            });
+                        });
+                    </script>
 
-    <?php if ($formSubmitted): ?>
-        <p style="color: green;">You have already submitted this form.</p>
-    <?php else: ?>
-        <form action="" method="POST">
-            <?php
-            foreach($mp as $key => $value) {
-                echo '<div class="form-group">';
-                echo '<label><b>'.$value.'</b>:</label>';
-                echo '<input type="text" value="'.htmlspecialchars($data[$key] ?? '').'" disabled>';
-                echo '</div>';
-            }
-            ?>
-
-            <div class="form-group">
-                <label for="date_of_compre_exam_committee">Date of <?php echo $formName ?>:</label>
-                <input type="text" id="date_of_compre_exam_committee" name="date_of_compre_exam_committee" placeholder="DD/MM/YYYY" required>
-                <span class="error"><?php echo $errors['date_of_compre_exam_committee'] ?? ''; ?></span>
-            </div>
-
-            <div class="form-group">
-                <label for="result">Result:</label>
-                <select id="result" name="result" class="form-control" required>
-                    <option value="PASS">Pass</option>
-                    <option value="FAIL">Fail</option>
-                </select>
-                <span class="error"><?php echo $errors['result'] ?? ''; ?></span>
-            </div>
-
-            <div class="form-group">
-                <label for="result">Mode of Exam:</label>
-                <select id="result" name="result" class="form-control" required>
-                    <option value="BOTH">BOTH</option>
-                    <option value="ORAL">ORAL</option>
-                    <option value="WRITTEN">WRITTEN</option>
-                </select>
-                <span class="error"><?php echo $errors['result'] ?? ''; ?></span>
-            </div>
-
-            <script>
-                $(document).ready(function () {
-                    $("#date_of_compre_exam_committee").datepicker({
-                        dateFormat: "yy-mm-dd", // Change to SQL-friendly format
-                        changeMonth: true,
-                        changeYear: true,
-                        yearRange: "2000:2030"
-                    });
-                });
-            </script>
-
-            <button type="submit">Submit</button>
-        </form>
-    <?php endif; ?>
-</div>
-
+                    <button type="submit">Submit</button>
+                </form>
+            <?php endif; ?>
+        </div>
+    </div>
 </body>
 </html> 
