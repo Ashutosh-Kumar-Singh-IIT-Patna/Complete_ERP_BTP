@@ -32,17 +32,16 @@ function formatDate($date) {
     return "Invalid date format";
 }
 
-
-$formName = "APS 1";
-    $departmentName = "Computer Science and Engineering";
-    $rollNumber = "2101AI32";
-    $name = "Rahul Kumar";
-    $nationality = "Indian";
-    $gender = "Male"; 
-    $scholarCategory = "Regular and Full Time(Institute Fellow)";
-    $mobileNo = "1234567890";
-    $email = "abcd@gmail.com";
-    $supervisor = "Dr. XYZ";
+$formName = "Final Recommendation for Degree";
+$departmentName = "Computer Science and Engineering";
+$rollNumber = "2101AI32";
+$name = "Rahul Kumar";
+$nationality = "Indian";
+$gender = "Male"; 
+$scholarCategory = "Regular and Full Time(Institute Fellow)";
+$dateOfAdmission = "12/45/7890";
+$email = "abcd@gmail.com";
+$supervisor = "Dr. XYZ";
 $coSupervisor = "Dr. ABC";
 $sponsor = "Company Name";
 $projectNumber = "12345";
@@ -118,7 +117,7 @@ $finalRecomendationForDegree = formatDate($finalRecomendationForDegree);
     $pdf->SetAutoPageBreak(TRUE, $margin_bottom);
     $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-    $pdf->SetFont('times', '', 11);
+    $pdf->SetFont('times', '', 10.5);
     
     $pdf->AddPage();
 
@@ -144,15 +143,14 @@ $finalRecomendationForDegree = formatDate($finalRecomendationForDegree);
     $html = '<b>5.  Gender : </b>'.$gender;
     $pdf -> MultiCell(0.27 * $available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $pdf->SetFont('times', '', 10);
-    $html = '<b>6.  Category : </b>'.$scholarCategory;
+    $html = '<b>6.  PhD Admission  Category : </b>'.$scholarCategory;
     $pdf -> MultiCell($available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
 
-    $html = '<b>7. Mob No : </b>'.$mobileNo;
-    $pdf -> MultiCell($available_width * 0.35, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    $html = '<b>7. Date of Admission : </b>'.$dateOfAdmission;
+    $pdf -> MultiCell($available_width * 0.50, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
     $html = '<b>8. Email : </b>'.$email;
-    $pdf -> MultiCell($available_width * 0.65, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    $pdf -> MultiCell($available_width * 0.50, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
     $html = '<b>9.  Supervisor : </b>'.$supervisor;
     $pdf -> MultiCell(0.5 * $available_width , 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
@@ -160,10 +158,10 @@ $finalRecomendationForDegree = formatDate($finalRecomendationForDegree);
     $html = '<b>10.  Co-Supervisor : </b>'.$coSupervisor;
     $pdf -> MultiCell(0.5 * $available_width , 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>11. If Sponsored (Name of agency): '.$sponsor;
+    $html = '<b>11. If Sponsored (Name of agency): </b>'.$sponsor;
     $pdf -> MultiCell($available_width  , 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>12a. Proj. No. as per Rnd : </b>'.$projectNumber;
+    $html = '<b>12a. Project No. as per Rnd : </b>'.$projectNumber;
     $pdf -> MultiCell(0.40 * $available_width  , 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
 
     $html = '<b>12b. Project Tenure (X years, Y months) : </b>'.$projectTenure;
@@ -178,21 +176,28 @@ $finalRecomendationForDegree = formatDate($finalRecomendationForDegree);
     $html = '<b>14. Title of '.$formName.' : </b>'.$titleOfForm;
     $pdf -> MultiCell($available_width , 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>15. Date of Seminar : </b>'.$dateOfSeminar;
+    $html = '<b>15. Date of '.$formName.' : </b>'.$dateOfSeminar;
     $pdf -> MultiCell($available_width , 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+
+    $html = '<b>16. Comment By DC : </b>'.$commentByDC;
+    $pdf -> MultiCell($available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $pdf->Ln(10);
+    $html = '<b>17. Performance of the Candidate : </b>'.$performance;
+    $pdf -> MultiCell($available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    
+    $html = '<b>Important Dates : </b>';
+    $pdf -> MultiCell($available_width, 0,   $html,   0,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     $pdf->SetFont('times', '', 7.5);
-    $html = '<b>1. Doctoral Comitte Formation</b>';
+    $html = '<b>1. Doctoral Committee Formation</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>2. Enrollment Process</b>';
+    $html = '<b>2. Compre. Exam Committee</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>3. Comp. Exam Committee</b>';
+    $html = '<b>3. Compre. Exam Report</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>4. Comp. Exam Report</b>';
+
+    $html = '<b>3a. Compre. Exam Report (A2)</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
 
     $html = $doctoralComitteFormation;
@@ -207,16 +212,16 @@ $finalRecomendationForDegree = formatDate($finalRecomendationForDegree);
     $html = $comprehensiveExamReportProcess;
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>4a. Compr. Exam Report (A2)</b>';
+    $html = '<b>4. Enrollment Process</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>5.  Registration Seminar</b>';
+    $html = '<b>5. Registration Seminar</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>5a.  Registration Seminar(A2)</b>';
+    $html = '<b>5a. Registration Seminar (A2)</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>6.  Assistanceship Enhancement</b>';
+    $html = '<b>6. Assistanceship Enhancement</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
     $html = $comprehensiveExamCommitteeProcess2;
@@ -264,13 +269,13 @@ $finalRecomendationForDegree = formatDate($finalRecomendationForDegree);
     $html = '<b>12. Synopsis Submission</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>12.1 Synopsis Submission(A2)</b>';
+    $html = '<b>12a. Synopsis Submission (A2)</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>14. Panel of Examiners</b>';
+    $html = '<b>13. Panel of Examiners</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>15. Thesis Submission Report : </b>';
+    $html = '<b>14. Thesis Submission Report</b>';
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
     $html = $synopsisSubmission;
@@ -285,13 +290,13 @@ $finalRecomendationForDegree = formatDate($finalRecomendationForDegree);
     $html = $thesisSubmissionReport;
     $pdf -> MultiCell(0.25 * $available_width, 0,   $html,   1,   'C',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
 
-    $html = '<b>16. Recommendation for Viva Voice</b>';
+    $html = '<b>15. Recommendation for Viva Voice</b>';
     $pdf -> MultiCell(0.33 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
 
-    $html = '<b>17. Final Recommendation for Degree : </b>';
+    $html = '<b>16. Final Recommendation for Degree </b>';
     $pdf -> MultiCell(0.34 * $available_width, 0,   $html,   1,   'C',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
-    $html = '<b>Total Duration : </b>';
+    $html = '<b>Total Duration </b>';
     $pdf -> MultiCell(0.33 * $available_width, 0,   $html,   1,   'C',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
     $html = $recommendationForVivaVoice;
@@ -302,78 +307,57 @@ $finalRecomendationForDegree = formatDate($finalRecomendationForDegree);
     
     $html = $duration;
     $pdf -> MultiCell(0.33 * $available_width, 0,   $html,   1,   'C',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    $pdf->SetFont('times', '', 10);
 
-    $html = '<b>16. Comment By DC : </b>'.$commentByDC;
-    $pdf -> MultiCell($available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>17. Performance of the Candidate : </b>'.$performance;
-    $pdf -> MultiCell($available_width, 0,   $html,   1,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    $pdf->Ln(5);
     $pdf->SetFont('times', '', 9);
+    $html='<b>Signature with Dates </b>';
+    $pdf->MultiCell($available_width, 0, $html, 0, 'L', false, 1, '', '', true, 0, true, true, 0, 'T', false);
 
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 8.5,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 8.5,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 8.5,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 8.5,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 8.5,   $html,   0,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    $x = $pdf->GetX() - 4; // Shift all content 4mm left
+    $y = $pdf->GetY() + 14;
+    $col_width = 0.20 * $available_width;
+    $line_height = 14;
 
-    $html = '<b>Member and Chairperson</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>Supervisor</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>Co-Supervisor</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>Additional Member1</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>Additional Member2</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 14,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 14,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 14,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 14,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '';
-    $pdf -> MultiCell(0.20 * $available_width, 14,   $html,   0,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    $labels = [
+        'Member and Chairperson',
+        'Supervisor',
+        'Co-Supervisor',
+        'Internal DC Member<br>(within Dept)',
+        'External DC Member<br>(other Dept)',
+    ];
 
-    $html = '<b>Section</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>Staff</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>JR</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>AR</b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
-    $html = '<b>Dean<b>';
-    $pdf -> MultiCell(0.20 * $available_width, 0,   $html,   0,   'L',   false,   1,    '',    '',  true,  0,   true,  true,   0,   'T', false);
-    
+    foreach ($labels as $index => $label) {
+        $xPos = $x + ($index * $col_width);
+        
+        // Draw static line for signature
+        $pdf->Line($xPos, $y, $xPos + $col_width - 5, $y);
+        
+        // Move below the line and add label with bold text
+        $pdf->writeHTMLCell($col_width, $line_height, $xPos-3, $y + 2, '<b>' . $label . '</b>', 0, 0, false, true, 'C', true);
+    }
+
+    // Move to next line for additional members
+    $y += $line_height + 10;
+    $pdf->SetXY($x, $y);
+
+    $additional_labels = [
+        'Additional Member',
+        'JA-Acad',
+        'AR-Acad',
+        'A/Dean-Academic',
+        "Yes/No<br><b>Approved</b>",
+    ];
+
+    foreach ($additional_labels as $index => $label) {
+        $xPos = $x + ($index * $col_width);
+        
+        // Draw static line for signature
+        $pdf->Line($xPos, $y, $xPos + $col_width - 5, $y);
+        
+        // Move below the line and add label with bold text
+        $pdf->writeHTMLCell($col_width, $line_height, $xPos-3, $y + 2, '<b>' . $label . '</b>', 0, 0, false, true, 'C', true);
+    }
+
     $pdf->Output('PhD_Application_Form.pdf', 'I');
-
     if (ob_get_length()) {
         ob_clean();
     }

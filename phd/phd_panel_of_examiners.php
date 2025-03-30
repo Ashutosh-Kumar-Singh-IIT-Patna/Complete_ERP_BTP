@@ -1,0 +1,232 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+session_start();
+require_once './../dfunctions.php';
+$errors = [];
+
+$roll = $_SESSION['roll'] ?? '1921CS12'; 
+$data = [];
+$formName = 'Panel of Examiners';
+$formSubmitted = false; // Flag to check if the form is already submitted
+
+$mp = [
+    'name_of_scholar' => 'Full Name of the Scholar',
+    'dept' => 'Department Name',
+    'roll' => 'Roll Number',
+    'nationality' => 'Nationality',
+    'gender' => 'Gender',
+    'scholar_phd_category' => 'PhD Admission Category',
+    'mobile' => 'Mobile No',
+    'email' => 'Email',
+    'proj_num' => 'Project Number as per RnD (If working on a Project)',
+    'proj_name' => 'Project Name (If working on a Project)',
+    'proj_tenure' => 'Project Tenure(X months) (If working on a Project)',
+    'sponsored_agency_name' => 'Sponsored Agency (if any)',
+];
+
+if ($roll) {
+    // Fetch scholar details along with form_submit_flag_thesis
+    $sql = "SELECT name_of_scholar, dept, roll, nationality, gender, category, scholar_phd_category, mobile, email, proj_num, proj_name, proj_tenure, sponsored_agency_name, form_submit_flag_panel_of_examiners
+            FROM phd_scholar WHERE roll = ?";
+    $params = ["s", $roll];
+    $result = execute_query($sql, $params);
+
+    if ($result['success'] && $result['data']) {
+        $data = $result['data'][0];
+        $formSubmitted = ($data['form_submit_flag_panel_of_examiners'] == 1); // Check if form was already submitted
+    } else {
+        $errors['fetch'] = "Failed to fetch user details.";
+    }
+} else {
+    $errors['session'] = "Session expired. Please log in again.";
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !$formSubmitted) {
+    function clean_input($data) {
+        return htmlspecialchars(stripslashes(trim($data)));
+    }
+
+    $required_fields = ['titleOfThesis', 'dateOfRegistration'];
+    $errors = [];
+
+    foreach ($required_fields as $field) {
+        if (empty($_POST[$field])) {
+            $errors[$field] = "This field is required.";
+        }
+    }
+
+    if (empty($errors)) {
+        $titleOfThesis = clean_input($_POST['titleOfThesis']);
+        $dateOfRegistration = clean_input($_POST['dateOfRegistration']);
+        $indian_examiners = $_POST['indian_examiners'] ?? [];
+        $foreign_examiners = $_POST['foreign_examiners'] ?? [];
+
+        $panelOfExaminers = json_encode(["indian" => $indian_examiners, "foreign" => $foreign_examiners]);
+
+        if (!$roll) {
+            $errors['session'] = "Session expired. Please log in again.";
+        } else {
+            $active = 1;
+            $sql = "UPDATE phd_scholar SET thesis_title = ?, date_of_panel_of_examiners = ?, panel_of_examiners = ?, form_submit_flag_panel_of_examiners = ? WHERE roll = ?";
+            $params = ["sssis", $titleOfThesis, $dateOfRegistration, $panelOfExaminers, $active, $roll];
+
+            $result = execute_query($sql, $params);
+
+            if ($result['success']) {
+                $_SESSION['success'] = 'Application '.$formName.' submitted successfully!';
+                header("Location: buffer.php");
+                exit();
+            } else {
+                $errors['db'] = "Database error. Please try again.";
+            }
+        }
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo htmlspecialchars($formName); ?></title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; background-color: #f8f9fa; }
+        .container { max-width: 1000px; margin: auto; background: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .form-group { margin-bottom: 15px; }
+        label { font-weight: bold; display: block; }
+        input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        .error { color: red; font-size: 12px; }
+        button { background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2><?php echo htmlspecialchars($formName); ?></h2>
+
+    <?php if (!empty($_SESSION['success'])): ?>
+        <p style="color: green;"> <?php echo $_SESSION['success']; unset($_SESSION['success']); ?> </p>
+    <?php endif; ?>
+
+    <?php if (!empty($errors['fetch'])): ?>
+        <p class="error"> <?php echo $errors['fetch']; ?> </p>
+    <?php endif; ?>
+
+    <?php if ($formSubmitted): ?>
+        <p style="color: green;">You have already submitted this form.</p>
+    <?php else: ?>
+        <form action="" method="POST">
+            <?php foreach($mp as $key => $value): ?>
+                <div class="form-group">
+                    <label><?php echo htmlspecialchars($value); ?>:</label>
+                    <input type="text" value="<?php echo htmlspecialchars($data[$key] ?? ''); ?>" disabled>
+                </div>
+            <?php endforeach; ?>
+
+            <div class="container">
+                <h3>Panel of Examiners</h3>
+                
+                <h4>Indian Examiners(Minimum 5)</h4>
+                <table id="indian_examiners">
+                    <tr>
+                        <th>Name</th><th>Designation</th><th>Office Address</th><th>Home Page</th><th>Specialization</th><th>Email</th><th>Telephone</th><th>Action</th>
+                    </tr>
+                </table>
+                <button type="button" onclick="addRow('indian_examiners')">Add Indian Examiner</button>
+                
+                <h4>Foreign Examiners(Minimum 5)</h4>
+                <table id="foreign_examiners">
+                    <tr>
+                        <th>Name</th><th>Designation</th><th>Office Address</th><th>Home Page</th><th>Specialization</th><th>Email</th><th>Telephone</th><th>Action</th>
+                    </tr>
+                </table>
+                <button type="button" onclick="addRow('foreign_examiners')">Add Foreign Examiner</button>
+            </div>
+
+            <div class="form-group">
+                <label>Title of <?php echo htmlspecialchars($formName); ?>:</label>
+                <input type="text" name="titleOfThesis" value="<?php echo htmlspecialchars($_POST['titleOfThesis'] ?? ''); ?>" required>
+                <span class="error"> <?php echo $errors['titleOfThesis'] ?? ''; ?> </span>
+            </div>
+
+            <div class="form-group">
+                <label for="dateOfRegistration">Date of <?php echo htmlspecialchars($formName); ?>:</label>
+                <input type="text" id="dateOfRegistration" name="dateOfRegistration" placeholder="YYYY-MM-DD" required>
+                <span class="error"> <?php echo $errors['dateOfRegistration'] ?? ''; ?> </span>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $("#dateOfRegistration").datepicker({
+                        dateFormat: "yy-mm-dd",
+                        changeMonth: true,
+                        changeYear: true,
+                        yearRange: "2000:2030"
+                    });
+
+                    // Ensure 5 rows are present initially
+                    for (let i = 0; i < 5; i++) {
+                        addRow("indian_examiners");
+                        addRow("foreign_examiners");
+                    }
+
+                    // Attach validation to the form submit event
+                    $("form").on("submit", function (e) {
+                        if (!validateExaminerCount()) {
+                            e.preventDefault(); // Prevent form submission if validation fails
+                        }
+                    });
+                });
+
+                function addRow(tableId) {
+                    let table = document.getElementById(tableId);
+                    if (table.rows.length >= 11) { // Including header row
+                        alert("Maximum 10 examiners allowed.");
+                        return;
+                    }
+
+                    let row = table.insertRow();
+                    let cols = ['name', 'designation', 'office_address', 'home_page', 'specialization', 'email_Address', 'telephone'];
+
+                    cols.forEach(col => {
+                        let cell = row.insertCell();
+                        let input = document.createElement("input");
+                        input.type = "text";
+                        input.name = `${tableId}[${table.rows.length - 1}][${col}]`;
+                        cell.appendChild(input);
+                    });
+
+                    let cell = row.insertCell();
+                    let removeBtn = document.createElement("button");
+                    removeBtn.innerHTML = "Remove";
+                    removeBtn.type = "button";
+                    removeBtn.onclick = function () {
+                        table.deleteRow(row.rowIndex);
+                    };
+                    cell.appendChild(removeBtn);
+                }
+
+                function validateExaminerCount() {
+                    let indianRows = document.getElementById("indian_examiners").rows.length - 1; // Exclude header row
+                    let foreignRows = document.getElementById("foreign_examiners").rows.length - 1; // Exclude header row
+
+                    if (indianRows < 0 || foreignRows < 0) {
+                        alert("You must enter at least 5 Indian and 5 Foreign examiners.");
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
+            <button type="submit">Submit</button>
+        </form>
+    <?php endif; ?>
+</div>
+
+</body>
+</html>
