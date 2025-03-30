@@ -32,6 +32,10 @@ $mp = [
     'dc_additional_member_1' => 'DC Additional Member 1',
 ];
 
+$phd_coord = [
+    'dc_phd_coordinator' => 'PhD Coordinator',
+];
+
 $course = [
     'dc_course_work_fac_1' => 'Course Work Faculty 1',
     'dc_course_work_fac_2' => 'Course Work Faculty 2',
@@ -73,6 +77,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateData['date_of_compre_exam_committee'] = clean_input($_POST['date_of_compre_exam_committee']);
     }
 
+    if(!empty($_POST['dc_phd_coordinator'])) {
+        $updateData['dc_phd_coordinator'] = clean_input($_POST['dc_phd_coordinator']);
+    }
+    
     foreach ($course as $key => $label) {
         if (!empty($_POST[$key])) {
             $updateData[$key] = clean_input($_POST[$key]);
@@ -137,6 +145,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="form-label fw-bold" for="date_of_compre_exam_committee">Date of <?php echo $formName ?>:</label>
                         <input type="text" id="date_of_compre_exam_committee" name="date_of_compre_exam_committee" class="form-control" placeholder="YYYY-MM-DD" required>
                         <span class="error"><?php echo $errors['date_of_compre_exam_committee'] ?? ''; ?></span>
+                    </div>
+
+                    <div class="row">
+                        <?php foreach ($phd_coord as $key => $value): ?>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold"> <?php echo $value; ?> </label>
+                                <select name="<?php echo $key; ?>" class="form-select" required>
+                                    <option value="PhD Co-ordinator (Dept)" selected>PhD Co-ordinator (Dept)</option>
+                                </select>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
 
                     <div class="row">

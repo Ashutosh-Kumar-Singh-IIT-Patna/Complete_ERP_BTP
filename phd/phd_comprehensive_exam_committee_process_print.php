@@ -23,7 +23,7 @@ class MYPDF extends TCPDF {
 }
 
 $sql = 'SELECT name_of_scholar, dept, roll, nationality, gender, scholar_phd_category, mobile, email, supervisor, co_supervisor, sponsored_agency_name, proj_num, proj_name, proj_tenure, broad_research_area, form_submit_flag_compre_exam_committee,
-        dc_chair, dc_internal_member, dc_external_member, dc_additional_member_1, supervisor, co_supervisor, dc_course_work_fac_1, dc_course_work_fac_2, dc_course_work_fac_3, dc_course_work_fac_4, dc_course_work_fac_5, dc_course_work_fac_6, dc_course_work_fac_7, dc_course_work_fac_8, dc_course_work_fac_9, dc_course_work_fac_10,
+        dc_chair, dc_internal_member, dc_external_member, dc_additional_member_1, supervisor, co_supervisor, dc_phd_coordinator, dc_course_work_fac_1, dc_course_work_fac_2, dc_course_work_fac_3, dc_course_work_fac_4, dc_course_work_fac_5, dc_course_work_fac_6, dc_course_work_fac_7, dc_course_work_fac_8, dc_course_work_fac_9, dc_course_work_fac_10,
         date_of_dc_formation, date_of_compre_exam_committee, date_of_compre_attempt_1, date_of_compre_attempt_2, date_of_enrollment, date_of_reg_1, date_of_reg_2, date_of_enhancement, date_of_aps_1, date_of_aps_2, date_of_aps_3, date_of_aps_4, date_of_aps_5, 
         date_of_synopsis_attempt_1, date_of_synopsis_attempt_2, date_of_panel_of_examiners, date_of_viva_voce, date_of_thesis_submission , date_of_final_recommendation
         FROM phd_scholar WHERE roll = ?'; //Important
@@ -63,6 +63,7 @@ $dcExternalMember = $data['dc_external_member'] ?? '';
 $dcAdditionalMember1 = $data['dc_additional_member_1'] ?? '';
 $supervisor = $data['supervisor'] ?? '';
 $coSupervisor = $data['co_supervisor'] ?? '';
+$dcPhdCoordinator = $data['dc_phd_coordinator'] ?? '';
 $dcCourseWorkFac1 = $data['dc_course_work_fac_1'] ?? '';
 $dcCourseWorkFac2 = $data['dc_course_work_fac_2'] ?? '';
 $dcCourseWorkFac3 = $data['dc_course_work_fac_3'] ?? '';
@@ -260,6 +261,17 @@ $duration = calculateDuration($doctoralComitteFormation, $finalRecomendationForD
         $pdf -> MultiCell(0.6 * $available_width,  0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
     
         $pdf -> MultiCell(0.25 * $available_width, 0,      '',   1,   'L',   false,   1,    '',    '',  true,  1,   true,  true,   0,   'T', false);
+    }
+
+    if($dcPhdCoordinator != 'NA (NA)'){
+        $html = $num++;
+        $pdf -> MultiCell(0.15 * $available_width, 0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    
+        $html = $dcPhdCoordinator;
+        $pdf -> MultiCell(0.6 * $available_width,  0,   $html,   1,   'L',   false,   0,    '',    '',  true,  0,   true,  true,   0,   'T', false);
+    
+        $pdf -> MultiCell(0.25 * $available_width, 0,      '',   1,   'L',   false,   1,    '',    '',  true,  1,   true,  true,   0,   'T', false);
+
     }
 
     if($dcCourseWorkFac1 != 'NA (NA)'){
