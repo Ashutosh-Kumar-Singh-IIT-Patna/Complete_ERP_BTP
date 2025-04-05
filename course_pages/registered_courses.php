@@ -1,9 +1,20 @@
 <?php
 require_once 'functions.php';
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 if(!isset($_SESSION['roll'])){
     header("Location: index.php");
 }
+function getStudentName($rollno) {
+    $sql = "SELECT full_name, department FROM acad_users WHERE roll_number = ?";
+    $result = executeQuery($sql, [$rollno], 's', 'select');
+    return $result;
+}
+$result = getStudentName($_SESSION['roll']);
+$name = $result[0]['full_name'] ?? 'Unknown Student';   
+$department = $result[0]['department'] ?? 'Unknown Department'; // Assuming department is fetched from the database
 
 function getSemesterNo($rollno) {
     $currentYear = date('Y');
@@ -96,9 +107,9 @@ unset($_SESSION['MESSAGE']);
 
 
 <div class="info">
-    <strong>Name:</strong> John Doe<br>
+    <strong>Name:</strong> <?php echo htmlspecialchars($name); ?><br>
     <strong>Roll No:</strong> <?php echo htmlspecialchars($roll); ?><br>
-    <strong>Branch:</strong> Computer Science
+    <strong>Branch:</strong> <?php echo htmlspecialchars($department); ?><br>
 </div>
 
 <?php if (!empty($registered_courses)): ?>

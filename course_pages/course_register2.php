@@ -27,6 +27,15 @@ $sem_no = $_SESSION['sem_no'];
 $rollPref = substr($roll, 0, 6);
 $mp = [];
 
+// function getStudentName($rollno) {
+//     $sql = "SELECT full_name, department FROM acad_users WHERE roll_number = ?";
+//     $result = executeQuery($sql, [$rollno], 'ss', 'select');
+//     return $result;
+// }
+// $result = getStudentName($_SESSION['roll']);
+// $name = isset($result[0]['full_name']) ? $result[0]['full_name'] : null;
+// $department = isset($result[0]['department']) ? $result[0]['department'] : null;
+
 // SQL for core courses (Type C)
 $sql = "
 SELECT course_core_mapping.course_code as course_code, course_master.course_name as course_name, course_master.`l-t-p` as l_t_p, course_master.c as c
@@ -105,7 +114,7 @@ if (!empty($has_ide)) { // Check if there are any IDE types
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $db = dbConnect();
+    $db = db_connect();
     $db->begin_transaction(); // Start the transaction
 
     try {
@@ -200,12 +209,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Course Registration</title>
     <link rel="stylesheet" href="css/course_register.css">
+    <style>
+        .info {
+        width: 85%;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        color: #555;
+        font-size: 0.95em;
+        }
+
+        .info strong {
+        color: #333;
+        }
+    </style>
 </head>
 <body>
 <?php include 'nav.php'; ?>
 <h1>Course Registration</h1>
 
 <form method="post">
+    <!-- <div class="info">
+        <strong>Name:</strong> <?php echo htmlspecialchars($name); ?><br>
+        <strong>Roll No:</strong> <?php echo htmlspecialchars($roll); ?><br>
+        <strong>Branch:</strong> <?php echo htmlspecialchars($department); ?><br>
+    </div> -->
     <div class="course-container">
         <?php
         // Display core courses (no capacity check)

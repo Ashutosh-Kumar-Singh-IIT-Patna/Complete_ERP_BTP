@@ -1,13 +1,65 @@
-[30-Mar-2025 12:09:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'dc_couse_work_fac_1' in 'field list' in /var/www/html/dfunctions.php:11
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 206
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $pageWidth in /var/www/html/course_pages/transcript2.php on line 206
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 209
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $cellHeight in /var/www/html/course_pages/transcript2.php on line 209
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 213
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $pageWidth in /var/www/html/course_pages/transcript2.php on line 270
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 309
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 309
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 309
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 309
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 309
+[05-Apr-2025 18:28:36 UTC] PHP Warning:  Undefined variable $margin in /var/www/html/course_pages/transcript2.php on line 309
+[05-Apr-2025 18:51:29 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /var/www/html/course_pages/functions.php:80
 Stack trace:
-#0 /var/www/html/dfunctions.php(11): mysqli->prepare('SELECT name_of_...')
-#1 /var/www/html/phd/phd_comprehensive_exam_committee_process_print.php(31): execute_query('SELECT name_of_...', Array)
-#2 {main}
-  thrown in /var/www/html/dfunctions.php on line 11
-[30-Mar-2025 12:16:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'dc_couse_work_fac_4' in 'field list' in /var/www/html/dfunctions.php:11
+#0 /var/www/html/course_pages/functions.php(80): mysqli_stmt->bind_param('ss', '2401CE23')
+#1 /var/www/html/course_pages/course_register2.php(32): executeQuery('SELECT full_nam...', Array, 'ss', 'select')
+#2 /var/www/html/course_pages/course_register2.php(35): getStudentName('2401CE23')
+#3 {main}
+  thrown in /var/www/html/course_pages/functions.php on line 80
+[05-Apr-2025 18:51:30 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /var/www/html/course_pages/functions.php:80
 Stack trace:
-#0 /var/www/html/dfunctions.php(11): mysqli->prepare('SELECT name_of_...')
-#1 /var/www/html/phd/phd_comprehensive_exam_committee_process_print.php(31): execute_query('SELECT name_of_...', Array)
-#2 {main}
-  thrown in /var/www/html/dfunctions.php on line 11
-[30-Mar-2025 12:16:43 UTC] PHP Warning:  Undefined variable $height in /var/www/html/phd/phd_comprehensive_exam_committee_process_print.php on line 191
+#0 /var/www/html/course_pages/functions.php(80): mysqli_stmt->bind_param('ss', '2401CE23')
+#1 /var/www/html/course_pages/course_register2.php(32): executeQuery('SELECT full_nam...', Array, 'ss', 'select')
+#2 /var/www/html/course_pages/course_register2.php(35): getStudentName('2401CE23')
+#3 {main}
+  thrown in /var/www/html/course_pages/functions.php on line 80
+[05-Apr-2025 18:51:38 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /var/www/html/course_pages/functions.php:80
+Stack trace:
+#0 /var/www/html/course_pages/functions.php(80): mysqli_stmt->bind_param('ss', '2401CE23')
+#1 /var/www/html/course_pages/course_register2.php(32): executeQuery('SELECT full_nam...', Array, 'ss', 'select')
+#2 /var/www/html/course_pages/course_register2.php(35): getStudentName('2401CE23')
+#3 {main}
+  thrown in /var/www/html/course_pages/functions.php on line 80
+[05-Apr-2025 18:51:47 UTC] PHP Warning:  Undefined variable $name in /var/www/html/course_pages/course_register2.php on line 235
+[05-Apr-2025 18:51:47 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/course_pages/course_register2.php on line 235
+[05-Apr-2025 18:51:47 UTC] PHP Warning:  Undefined variable $department in /var/www/html/course_pages/course_register2.php on line 237
+[05-Apr-2025 18:51:47 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/course_pages/course_register2.php on line 237
+[05-Apr-2025 18:51:56 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /var/www/html/course_pages/functions.php:80
+Stack trace:
+#0 /var/www/html/course_pages/functions.php(80): mysqli_stmt->bind_param('ss', '2401CE23')
+#1 /var/www/html/course_pages/registered_courses.php(9): executeQuery('SELECT full_nam...', Array, 'ss', 'select')
+#2 /var/www/html/course_pages/registered_courses.php(12): getStudentName('2401CE23')
+#3 {main}
+  thrown in /var/www/html/course_pages/functions.php on line 80
+[05-Apr-2025 18:51:58 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /var/www/html/course_pages/functions.php:80
+Stack trace:
+#0 /var/www/html/course_pages/functions.php(80): mysqli_stmt->bind_param('ss', '2401CE23')
+#1 /var/www/html/course_pages/registered_courses.php(9): executeQuery('SELECT full_nam...', Array, 'ss', 'select')
+#2 /var/www/html/course_pages/registered_courses.php(12): getStudentName('2401CE23')
+#3 {main}
+  thrown in /var/www/html/course_pages/functions.php on line 80
+[05-Apr-2025 18:53:25 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /var/www/html/course_pages/functions.php:80
+Stack trace:
+#0 /var/www/html/course_pages/functions.php(80): mysqli_stmt->bind_param('ss', '2401CE23')
+#1 /var/www/html/course_pages/registered_courses.php(12): executeQuery('SELECT full_nam...', Array, 'ss', 'select')
+#2 /var/www/html/course_pages/registered_courses.php(15): getStudentName('2401CE23')
+#3 {main}
+  thrown in /var/www/html/course_pages/functions.php on line 80
+[05-Apr-2025 18:53:26 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /var/www/html/course_pages/functions.php:80
+Stack trace:
+#0 /var/www/html/course_pages/functions.php(80): mysqli_stmt->bind_param('ss', '2401CE23')
+#1 /var/www/html/course_pages/registered_courses.php(12): executeQuery('SELECT full_nam...', Array, 'ss', 'select')
+#2 /var/www/html/course_pages/registered_courses.php(15): getStudentName('2401CE23')
+#3 {main}
+  thrown in /var/www/html/course_pages/functions.php on line 80

@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && password_verify($password, $user['password'])) {
         // Setting session variables
         $_SESSION['roll'] = $user['roll'];
-        $_SESSION['sem_no'] = 7; //getSemesterNo($user['roll']);
+        $_SESSION['sem_no'] = getSemesterNo($user['roll']);
         $_SESSION['webmail'] = $user['webmail'];
         $_SESSION['is_fac'] = $user['is_fac'];
         $_SESSION['is_head'] = $user['is_head'];
